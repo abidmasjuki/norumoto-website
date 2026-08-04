@@ -1,0 +1,390 @@
+/* --- Norumoto EV - Responsive & Mobile Optimization (v2.1.0) --- */
+
+/* 1. Global Overflow Protection & Box-Sizing */
+html, body {
+  max-width: 100% !important;
+  width: 100% !important;
+  overflow-x: hidden !important;
+  box-sizing: border-box;
+}
+
+/* 2. Container Padding overrides */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+    max-width: 100% !important;
+  }
+}
+
+/* 3. Header & Navigation (Solving Navbar Overflows) */
+@media (max-width: 768px) {
+  #main-header {
+    padding: 0.75rem 0 !important;
+  }
+  
+  .logo-link {
+    gap: 0.4rem !important;
+  }
+  
+  #logo-img {
+    height: 28px !important;
+  }
+  
+  #logo-text {
+    height: 14px !important;
+  }
+  
+  #brand-logo span {
+    font-size: 1rem !important;
+    margin: 0 0.15rem !important;
+  }
+  
+  #brand-logo img[alt="Luyuan Logo"] {
+    height: 14px !important;
+  }
+
+  .nav-cta {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.75rem !important;
+    border-radius: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Critical brand spacing fix for narrow devices */
+  #logo-text {
+    display: none !important; /* Hide "NORUMOTO" text to fit on small phone screens */
+  }
+  #brand-logo span {
+    display: none !important; /* Hide spacer "|" */
+  }
+}
+
+/* 4. Showcase Banner (Hero) Typography */
+@media (max-width: 768px) {
+  .banner-title {
+    font-size: 2.25rem !important;
+  }
+  .banner-desc {
+    font-size: 0.9rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-title {
+    font-size: 1.85rem !important;
+  }
+}
+
+/* 5. Booking Section & Multi-Step Wizard Styling Overhaul */
+@media (max-width: 992px) {
+  .reserve-layout {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .reserve-sec {
+    padding: 4rem 0 !important;
+  }
+  
+  .reserve-details h3 {
+    font-size: 1.75rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  .reserve-form-panel {
+    padding: 1.5rem !important; /* Overriding user's 3.5rem which was squeezing fields on mobile */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4) !important;
+    border-radius: 12px !important;
+  }
+  
+  .form-grid {
+    gap: 1.25rem !important;
+  }
+  
+  .booking-progress-container {
+    padding: 0 0.5rem 1.5rem 0.5rem !important; /* Extra bottom space for step labels */
+  }
+  
+  .progress-step-label {
+    font-size: 0.65rem !important;
+    top: 36px !important;
+  }
+  
+  .booking-tab-btn {
+    padding: 0.85rem 0.5rem !important;
+    font-size: 0.78rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .reserve-form-panel {
+    padding: 1rem !important; /* Fully flat/tight wrapper for narrow viewports */
+  }
+  
+  .booking-tabs {
+    grid-template-columns: 1fr !important; /* Stack tabs vertically on very small screens */
+    gap: 0.5rem !important;
+  }
+  
+  .datetime-container {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+  }
+  
+  .payment-card-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+  }
+  
+  .wizard-actions {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+  
+  .wizard-actions .btn {
+    width: 100% !important;
+  }
+}
+
+/* 6. Configurator Card Padding Adjustments */
+@media (max-width: 768px) {
+  .configurator-sec {
+    padding: 4rem 0 !important;
+  }
+  
+  .config-visual-container {
+    padding: 1.5rem !important;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .config-visual-container {
+    padding: 1rem !important;
+  }
+}
+
+/* 7. Leaflet Map container bounds protection */
+.map-leaflet-wrapper, #leaflet-map {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* 8. Chatbot Widget Mobile tweaks */
+@media (max-width: 480px) {
+  .ai-chat-widget {
+    bottom: 16px !important;
+    right: 16px !important;
+  }
+  .chat-window {
+    width: calc(100vw - 32px) !important;
+    bottom: 64px !important;
+    right: 0 !important;
+    height: 380px !important;
+  }
+}
+
+/* 9. Luyuan Features layout overrides */
+@media (max-width: 480px) {
+  .features-detail-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  .battery-details-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+}
+
+/* ==========================================================================
+   Tesla-inspired Minimalism Visual Overrides (Aesthetics Overhaul v1.9.5)
+   ========================================================================== */
+
+/* 10. Navigation & Header Transparency */
+header {
+  border-bottom: none !important;
+}
+
+header.scrolled {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+  background: rgba(0, 0, 0, 0.9) !important;
+}
+
+/* 11. Rounded Pill Button Overhaul */
+.btn, .nav-cta, .lang-btn, .booking-tab-btn {
+  border-radius: 100px !important; /* Fully rounded pill shape */
+  text-transform: none !important;  /* Elegant casing */
+  letter-spacing: 0px !important;    /* Clean tracking */
+  font-weight: 500 !important;
+  box-shadow: none !important;       /* No neon glows */
+  text-shadow: none !important;
+}
+
+.btn-primary {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: none !important;
+}
+
+.btn-primary:hover {
+  background: rgba(255, 255, 255, 0.85) !important;
+  color: #000000 !important;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: none !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  color: #ffffff !important;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border: none !important;
+}
+
+.nav-cta {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: none !important;
+  font-size: 0.8rem !important;
+  padding: 0.55rem 1.75rem !important;
+}
+
+.nav-cta:hover {
+  background: rgba(255, 255, 255, 0.85) !important;
+  color: #000000 !important;
+  box-shadow: none !important;
+}
+
+/* 12. Flat, Borderless Surface Panels */
+.reserve-form-panel, .payment-card, .faq-item, .battery-detail-card {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.04) !important;
+  box-shadow: none !important;
+  border-radius: 16px !important;
+}
+
+.payment-card.active {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+/* 13. Radar HUD & HOTSPOT Simplicity */
+.radar-circle {
+  display: none !important; /* Hide glowing circles */
+}
+
+.radar-hud {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* 14. Inline SVG Icon Alignment */
+.payment-card-icon svg, .map-gps-btn svg, .chat-icon svg {
+  display: inline-block;
+  vertical-align: middle;
+  color: currentColor;
+}
+
+.payment-card-icon {
+  margin-bottom: 0.5rem;
+  color: #ffffff !important;
+}
+
+.map-gps-btn {
+  color: #ffffff !important;
+}
+
+/* 15. Chatbot Widget Styling Overhaul */
+.chat-toggle-btn {
+  box-shadow: none !important;
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+.chat-toggle-btn:hover {
+  transform: scale(1.05) !important;
+  box-shadow: none !important;
+}
+
+.chat-send-btn {
+  border-radius: 50% !important;
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+.chat-msg-user {
+  background: #333333 !important;
+  color: #ffffff !important;
+  border-radius: 12px !important;
+}
+
+.chat-msg-bot {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.04) !important;
+  color: #e2e8f0 !important;
+  border-radius: 12px !important;
+}
+
+.chat-pulse {
+  border: 2px solid #ffffff !important;
+  box-shadow: none !important;
+}
+
+/* 16. Navigation Header Alignment & Collision Fix */
+.nav-flex {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 2.5rem !important; /* Prevent elements colliding */
+}
+
+.logo-link {
+  flex-shrink: 0 !important;
+  margin-right: 1.5rem !important; /* Separation between logo and menu */
+}
+
+nav ul {
+  gap: 1.75rem !important; /* Sleek compact Tesla-style spacing */
+}
+
+@media (max-width: 1200px) {
+  nav ul {
+    gap: 1.1rem !important; /* Compress spacing on mid-sized viewports */
+  }
+  nav a {
+    font-size: 0.8rem !important;
+  }
+}
+
+@media (max-width: 1040px) {
+  /* Hide less critical links on medium/tablet viewports to completely prevent overlap */
+  #link-perf, #link-design, #link-specs {
+    display: none !important;
+  }
+}
+
+/* 17. Tech Hotspot Overlays (Solving Animated Text Double Rendering) */
+.hotspot-label {
+  opacity: 0 !important; /* Hide floating text labels by default to prevent double rendering with image text */
+  transform: translateY(-50%) scale(0.9) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  pointer-events: none !important;
+}
+
+.hotspot:hover .hotspot-label,
+.hotspot.active .hotspot-label {
+  opacity: 1 !important; /* Reveal only when hovered or clicked */
+  transform: translateY(-50%) scale(1) !important;
+}
+
+

@@ -1,0 +1,1200 @@
+/* --- Norumoto EV - S90 Luyuan Features CSS (v2.1.0) --- */
+
+:root {
+  --color-neon-green: #10b981;
+  --color-neon-blue: #0ea5e9;
+  --color-neon-gold: #f59e0b;
+  --bg-glass-dark: rgba(17, 17, 21, 0.75);
+  --border-glass: rgba(255, 255, 255, 0.08);
+}
+
+/* ==========================================================================
+   1. Battery Showcase Section
+   ========================================================================== */
+.battery-showcase-sec {
+  background: linear-gradient(rgba(7, 8, 13, 0.72), rgba(14, 16, 24, 0.82)), url('assets/Wallpaper/coastal_scooter_motion.webp') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed; /* Parallax effect */
+  padding: 8rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.battery-showcase-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  margin-top: 4rem;
+  align-items: center;
+}
+
+/* Left side: Chassis */
+.battery-chassis-container {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-glass);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.battery-chassis-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.8s ease;
+}
+
+.battery-chassis-container:hover .battery-chassis-img {
+  transform: scale(1.03);
+}
+
+/* Specs Overlay Dashboard */
+.battery-specs-dash {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
+  background: var(--bg-glass-dark);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-around;
+  padding: 1.5rem 1rem;
+  z-index: 10;
+}
+
+.spec-dash-item {
+  text-align: center;
+  flex: 1;
+}
+
+.spec-dash-val {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.spec-dash-unit {
+  font-size: 1.1rem;
+  color: var(--color-neon-gold);
+  font-weight: 600;
+  margin-left: 0.1rem;
+}
+
+.spec-dash-lbl {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.spec-dash-divider {
+  width: 1px;
+  background: var(--border-glass);
+  align-self: stretch;
+}
+
+/* Right side: Floating HUD & specs list */
+.battery-hud-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 320px;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.radar-hud {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.radar-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(16, 185, 129, 0.15);
+  transition: all 0.5s ease;
+}
+
+.circle-1 {
+  width: 100%;
+  height: 100%;
+  animation: rotateClockwise 25s linear infinite;
+  border: 1px dashed rgba(16, 185, 129, 0.12);
+}
+
+.circle-2 {
+  width: 80%;
+  height: 80%;
+  animation: rotateCounterClockwise 18s linear infinite;
+  border: 1px solid rgba(16, 185, 129, 0.08);
+}
+
+.circle-3 {
+  width: 60%;
+  height: 60%;
+  border: 2px solid rgba(16, 185, 129, 0.05);
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.05) 0%, transparent 70%);
+}
+
+.battery-floating-pack {
+  width: 170px;
+  height: auto;
+  z-index: 5;
+  filter: drop-shadow(0 15px 25px rgba(16, 185, 129, 0.25));
+  animation: floatEffect 4s ease-in-out infinite;
+}
+
+.battery-details-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.battery-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.battery-detail-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-glass);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.battery-detail-card:hover {
+  background: rgba(16, 185, 129, 0.02);
+  border-color: rgba(16, 185, 129, 0.25);
+  transform: translateY(-3px);
+}
+
+.battery-detail-card h4 {
+  font-family: 'Outfit', sans-serif;
+  color: var(--color-neon-green);
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.battery-detail-card p {
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+/* Animations */
+@keyframes rotateClockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rotateCounterClockwise {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes floatEffect {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(1deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+
+/* ==========================================================================
+   2. Dual Displays & Features Grid
+   ========================================================================== */
+.displays-showcase-grid {
+  display: flex;
+  justify-content: center;
+  margin: 3.5rem 0 5rem 0;
+}
+
+.displays-hero-image {
+  max-width: 900px;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border-glass);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+  background: #000;
+  position: relative;
+}
+
+.displays-hero-image::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at center, transparent 30%, rgba(0,0,0,0.4) 100%);
+  pointer-events: none;
+}
+
+.displays-main-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.displays-hero-image:hover .displays-main-img {
+  transform: scale(1.02);
+}
+
+/* Detail Grid */
+.features-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.feature-detail-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-glass);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.feature-detail-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.feature-detail-img-box {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  background: #070709;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.feature-detail-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.feature-detail-card:hover .feature-detail-img-box img {
+  transform: scale(1.08);
+}
+
+.feature-detail-content {
+  padding: 1.25rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-detail-tag {
+  font-size: 0.75rem;
+  color: var(--color-neon-blue);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.feature-detail-content h4 {
+  font-family: 'Outfit', sans-serif;
+  color: #ffffff;
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.feature-detail-content p {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+
+/* ==========================================================================
+   3. Core Technology Section (Interactive hotspots)
+   ========================================================================== */
+.core-tech-sec {
+  background: linear-gradient(rgba(7, 8, 13, 0.65), rgba(14, 16, 24, 0.75)), url('assets/Wallpaper/campus_scooter_sunny.webp') no-repeat center top;
+  background-size: cover;
+  background-attachment: scroll !important; /* Prevents cropping the human face and solves the parallax black bar scroll gap */
+  padding: 0;
+  overflow: visible;
+  border-top: 1px solid var(--border-glass);
+  border-bottom: 1px solid var(--border-glass);
+}
+
+/* Header block inside core-tech retains breathing room */
+.core-tech-sec > .container {
+  padding-top: 6rem;
+  padding-bottom: 4rem;
+  width: 95% !important;
+  max-width: 1600px !important; /* Expands container to allow wider, larger interactive panels */
+}
+
+.interactive-diagram-container {
+  display: block !important; /* Acts as a standard parent block for diagram-viewport */
+  margin-top: 0 !important;
+  position: relative;
+  width: 100%;
+}
+
+.diagram-viewport {
+  position: relative;
+  width: 100%;
+  max-width: none !important; /* Remove max-width limit to allow expanding inside grid column */
+  background: rgba(10, 10, 12, 0.88) !important; /* Restored: Dark card viewport container */
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-radius: 24px !important;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  padding: 3rem 0 !important; /* Kept left/right padding at 0 to ensure proper hotspot-scooter image alignment scale */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35) !important;
+}
+
+.diagram-scooter-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 65vh;
+  object-fit: contain;
+  box-sizing: border-box;
+}
+
+/* Flashing Hotspot Dot Styles */
+.hotspot {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  z-index: 20;
+  transform: translate(-50%, -50%);
+}
+
+.hotspot-dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-neon-green);
+  top: 6px;
+  left: 6px;
+  box-shadow: 0 0 10px var(--color-neon-green);
+  z-index: 5;
+  transition: background-color 0.3s ease;
+}
+
+.hotspot:hover .hotspot-dot,
+.hotspot.active .hotspot-dot {
+  background: var(--color-neon-blue);
+  box-shadow: 0 0 12px var(--color-neon-blue);
+}
+
+.hotspot-pulse {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--color-neon-green);
+  opacity: 0;
+  animation: pulseEffect 2s infinite;
+  box-sizing: border-box;
+}
+
+.hotspot:hover .hotspot-pulse,
+.hotspot.active .hotspot-pulse {
+  border-color: var(--color-neon-blue);
+}
+
+/* Tooltip/Labels on the diagram */
+.hotspot-label {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border-glass);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.left-label {
+  right: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.right-label {
+  left: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hotspot:hover .hotspot-label,
+.hotspot.active .hotspot-label {
+  opacity: 1;
+  color: var(--color-neon-blue);
+  border-color: rgba(14, 165, 233, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Tech Info Card (Bottom Display Card) */
+.tech-info-card {
+  max-width: none !important; /* Expand to fill grid column */
+  margin: 0 !important; /* Remove margins to align with diagram viewport */
+  background: rgba(255, 255, 255, 0.04) !important; /* Translucent glassmorphic background */
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 24px !important;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35) !important;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tech-info-card.highlight {
+  border-color: rgba(16, 185, 129, 0.4) !important;
+  box-shadow: 0 20px 40px rgba(16, 185, 129, 0.2) !important;
+}
+
+.tech-info-card-inner {
+  display: flex !important; /* Vertically stack the image and text on all screen sizes */
+  flex-direction: column !important;
+  align-items: stretch !important;
+  min-height: auto !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 24px !important;
+}
+
+.tech-info-img-box {
+  width: 100% !important;
+  height: 240px !important;
+  min-height: auto !important;
+  background: rgba(255, 255, 255, 0.02) !important; /* Remove dark background completely */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-right: none !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  overflow: hidden;
+}
+
+.tech-info-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transition: all 0.5s ease;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.tech-info-text-box {
+  padding: 2.2rem !important;
+}
+
+.tech-info-text-box h3 {
+  font-family: 'Outfit', sans-serif;
+  color: #ffffff;
+  font-size: 1.6rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.tech-info-text-box p {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Keyframes for pulse */
+@keyframes pulseEffect {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+
+/* ==========================================================================
+   4. Responsive Adjustments
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .features-detail-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .battery-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .battery-chassis-container {
+    max-width: 550px;
+    margin: 0 auto;
+  }
+  
+  .battery-hud-container {
+    height: 250px;
+  }
+  
+  .radar-hud {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .battery-floating-pack {
+    width: 130px;
+  }
+  
+  .features-detail-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .tech-info-card-inner {
+    grid-template-columns: 1fr;
+  }
+  
+  .tech-info-img-box {
+    height: 180px;
+    border-right: none;
+    border-bottom: 1px solid var(--border-glass);
+  }
+  
+  .tech-info-text-box {
+    padding: 1.75rem;
+  }
+  
+  .hotspot-label {
+    display: none; /* Hide permanent labels on mobile to avoid clutter */
+  }
+}
+
+@media (max-width: 480px) {
+  .battery-specs-dash {
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    padding: 1rem 0.5rem;
+  }
+  
+  .spec-dash-val {
+    font-size: 1.6rem;
+  }
+  
+  .battery-details-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .features-detail-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 3D Core Technology Viewport overrides */
+.diagram-viewport.has-3d .diagram-scooter-img {
+  display: none !important;
+}
+
+.diagram-viewport.has-3d #diagram-spline-container {
+  display: block !important;
+}
+
+
+/* ==========================================================================
+   5. Floating AI Chatbot Widget
+   ========================================================================== */
+.ai-chat-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  font-family: 'Inter', sans-serif;
+}
+
+.chat-toggle-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0ea5e9, #02f2fe);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 242, 254, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+}
+
+.chat-toggle-btn:hover {
+  transform: scale(1.08) rotate(5deg);
+  box-shadow: 0 12px 32px rgba(0, 242, 254, 0.5);
+}
+
+.chat-icon {
+  font-size: 1.5rem;
+}
+
+.chat-pulse {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 12px;
+  height: 12px;
+  background: #10b981;
+  border-radius: 50%;
+  border: 2px solid #000;
+  box-shadow: 0 0 6px #10b981;
+}
+
+.chat-window {
+  position: absolute;
+  bottom: 72px;
+  right: 0;
+  width: 350px;
+  height: 480px;
+  background: rgba(10, 10, 14, 0.85);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.chat-window.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: all;
+}
+
+.chat-header {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(0, 242, 254, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.chat-close-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.chat-close-btn:hover {
+  color: #fff;
+}
+
+.chat-messages {
+  flex-grow: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.chat-msg {
+  max-width: 80%;
+  padding: 0.65rem 0.85rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  word-wrap: break-word;
+  margin: 0;
+}
+
+.chat-msg-bot {
+  background: rgba(255, 255, 255, 0.03);
+  color: #e2e8f0;
+  align-self: flex-start;
+  border-bottom-left-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.chat-msg-user {
+  background: linear-gradient(135deg, #0ea5e9, #0369a1);
+  color: #ffffff;
+  align-self: flex-end;
+  border-bottom-right-radius: 2px;
+}
+
+.chat-msg-typing {
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255,255,255,0.6);
+  align-self: flex-start;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom-left-radius: 2px;
+}
+
+.chat-msg-typing .status-icon {
+  animation: typing-pulse 1.5s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes typing-pulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.25); }
+}
+
+.chat-input-form {
+  padding: 0.75rem 1rem;
+  background: rgba(0,0,0,0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.chat-text-input {
+  flex-grow: 1;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  color: #fff;
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.chat-text-input:focus {
+  border-color: #0ea5e9;
+}
+
+.chat-send-btn {
+  background: #0ea5e9;
+  color: #fff;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.chat-send-btn:hover {
+  background: #0284c7;
+}
+
+@media (max-width: 480px) {
+  .chat-window {
+    width: calc(100vw - 32px);
+    right: -8px;
+    height: 400px;
+  }
+}
+
+/* ==========================================================================
+   Tech Feature Stack — Alternating Full-Width Rows (Technology Section)
+   ========================================================================== */
+
+.tech-feature-stack {
+  width: 100%;
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Each feature row */
+.tech-row {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  min-height: 400px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Image-right variant: flip columns */
+.tech-row--img-right {
+  grid-template-columns: 40% 60%;
+}
+
+/* Image cell */
+.tech-row-img {
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
+}
+
+.tech-row-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tech-row:hover .tech-row-img img {
+  transform: scale(1.04);
+}
+
+/* Text cell */
+.tech-row-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 5rem;
+  background: #080809;
+  position: relative;
+}
+
+.tech-row--img-right .tech-row-text {
+  order: -1;
+}
+
+.tech-row-text h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0.75rem 0 1rem 0;
+  line-height: 1.15;
+}
+
+.tech-row-text p {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 380px;
+}
+
+/* Subtle cyan accent line on left edge of text block */
+.tech-row-text::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, var(--color-accent-blue, #00d2ff), transparent);
+  border-radius: 2px;
+}
+
+/* 3-column strip at the bottom */
+.tech-row-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 280px;
+  width: 100%;
+  gap: 4px;
+  background: #050505;
+}
+
+.tech-strip-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-strip-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tech-strip-card:hover img {
+  transform: scale(1.06);
+}
+
+.tech-strip-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(4,4,6,0.95) 0%, rgba(4,4,6,0.3) 50%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  gap: 0.3rem;
+}
+
+.tech-strip-overlay h4 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+/* ── Alternating row separator line ── */
+.tech-row + .tech-row {
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+/* ── Mobile Responsive ── */
+@media (max-width: 768px) {
+  .tech-row,
+  .tech-row--img-right {
+    grid-template-columns: 1fr;
+    grid-template-rows: 280px auto;
+    min-height: unset;
+  }
+
+  .tech-row-img { min-height: 280px; }
+
+  .tech-row--img-right .tech-row-text { order: 0; }
+
+  .tech-row-text {
+    padding: 2.5rem 1.75rem;
+  }
+
+  .tech-row-text h3 { font-size: 1.8rem; }
+
+  .tech-row-text::before { display: none; }
+
+  .tech-row-strip {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .tech-strip-card { height: 220px; }
+}
+
+
+.tech-editorial-grid {
+  display: grid;
+  grid-template-columns: 60fr 40fr;
+  grid-template-rows: 220px 220px 200px 130px;
+  gap: 8px;
+  width: 100%;
+  margin-top: 2rem;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* Shared card base */
+.tech-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tech-card:hover {
+  transform: scale(1.01);
+  z-index: 2;
+}
+
+.tech-card:hover .tech-card-img {
+  transform: scale(1.06);
+}
+
+/* Full-bleed image inside each card */
+.tech-card-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
+}
+
+/* Gradient overlay — default: bottom-up dark fade */
+.tech-card-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(4, 4, 6, 0.94) 0%, rgba(4, 4, 6, 0.4) 45%, transparent 100%);
+  z-index: 2;
+}
+
+/* Hero variant: left-to-right fade for left-aligned text */
+.tech-card-gradient--left {
+  background: linear-gradient(to top, rgba(4, 4, 6, 0.95) 0%, rgba(4, 4, 6, 0.5) 40%, rgba(4,4,6,0.15) 100%);
+}
+
+/* Banner variant: subtle vignette */
+.tech-card-gradient--banner {
+  background: linear-gradient(to right, rgba(4, 4, 6, 0.88) 0%, rgba(4, 4, 6, 0.3) 60%, transparent 100%);
+}
+
+/* Text body — always pinned to bottom */
+.tech-card-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+/* Banner text: left-aligned inline */
+.tech-card-body--banner {
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.25rem 2rem;
+}
+
+.tech-card-body--banner .bento-tag {
+  flex-shrink: 0;
+}
+
+/* Typography */
+.tech-card-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.tech-card-title-sm {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+.tech-card-desc {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.65);
+  margin: 0;
+  line-height: 1.5;
+  max-width: 80%;
+}
+
+.tech-card-desc-sm {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.6);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Grid placement */
+.tech-hero {
+  grid-column: 1;
+  grid-row: 1 / 4; /* spans all 3 upper rows */
+}
+
+.tech-feat-top {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.tech-feat-mid {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+/* Sub-row for the two small cards */
+.tech-feat-pair {
+  grid-column: 2;
+  grid-row: 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.tech-feat-sm {
+  border-radius: 10px;
+}
+
+/* Full-width aerodynamic banner */
+.tech-banner {
+  grid-column: 1 / -1;
+  grid-row: 4;
+}
+
+/* ── Mobile Responsive ── */
+@media (max-width: 768px) {
+  .tech-editorial-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 280px 200px 200px auto 130px;
+  }
+
+  .tech-hero { grid-column: 1; grid-row: 1; }
+  .tech-feat-top { grid-column: 1; grid-row: 2; }
+  .tech-feat-mid { grid-column: 1; grid-row: 3; }
+  .tech-feat-pair { grid-column: 1; grid-row: 4; height: 180px; }
+  .tech-banner { grid-column: 1; grid-row: 5; }
+  .tech-card-body--banner { flex-direction: column; gap: 0.35rem; padding: 1.25rem; }
+}
+

@@ -1,0 +1,831 @@
+/* Norumoto EV - Performance and Technology Section Styles Overhaul */
+/* Design: Pure minimalist, Tesla HUD specs & Apple sticky split */
+
+/* ========================================== */
+/* 1. Battery Showcase - Minimalist Technical HUD */
+/* ========================================== */
+.hud-battery-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 3rem;
+  position: relative;
+}
+
+.hud-battery-layout-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+  align-items: flex-start;
+  margin-top: 4rem;
+  position: relative;
+  width: 100%;
+}
+
+.hud-specs-col {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.hud-spec-card {
+  background: transparent;
+  border: none;
+  padding: 1rem 0;
+  transition: var(--transition-fast);
+}
+
+.hud-spec-tag {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--color-accent-blue);
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+}
+
+.hud-spec-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.hud-spec-val {
+  font-family: var(--font-display);
+  font-size: 2.75rem; /* Sleek, technical font sizing */
+  font-weight: 800;
+  color: var(--color-text-primary);
+  line-height: 1;
+  margin-bottom: 1rem;
+  letter-spacing: -0.03em; /* Clean mathematical tracking */
+}
+
+.hud-spec-unit {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  margin-left: 0.2rem;
+}
+
+.hud-spec-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* Center Image Column */
+.hud-chassis-col {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hud-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.hud-chassis-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: brightness(0.9) contrast(1.05);
+}
+
+/* SVG Line Overlay */
+.hud-svg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.hud-line {
+  fill: none;
+  stroke: var(--color-accent-blue);
+  stroke-width: 1px;
+  stroke-opacity: 0.4;
+  stroke-dasharray: 4,4;
+}
+
+.hud-circle {
+  fill: var(--color-accent-blue);
+  stroke: var(--color-bg);
+  stroke-width: 1.5px;
+  r: 4;
+}
+
+/* ========================================== */
+/* 2. Cockpit Technology - Sticky Split-Screen */
+/* ========================================== */
+.split-spotlight-container {
+  display: flex;
+  gap: 4rem;
+  position: relative;
+  margin-top: 3rem;
+}
+
+/* Left Sticky Side */
+.spotlight-visual-wrapper {
+  flex: 1;
+  position: sticky;
+  top: 15vh;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 12px;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.02) 0%, transparent 70%);
+}
+
+.spotlight-img {
+  position: absolute;
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.spotlight-img.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 2;
+}
+
+/* Right Scrollable Side */
+.spotlight-text-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20vh;
+}
+
+.spotlight-text-block {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid var(--color-border);
+  padding: 2rem 0;
+}
+
+.spotlight-text-block:last-child {
+  border-bottom: none;
+}
+
+.spotlight-text-block h3 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-text-primary);
+  line-height: 1.3;
+}
+
+.spotlight-text-block p {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.spotlight-mobile-img {
+  display: none;
+  width: 100%;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 1rem;
+}
+
+.spotlight-mobile-img img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+
+/* ========================================== */
+/* 3. Responsive Adaptations */
+/* ========================================== */
+@media (max-width: 1024px) {
+  .hud-battery-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+  
+  .hud-battery-layout-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+  
+  .hud-chassis-col {
+    grid-column: span 2;
+    order: -1;
+  }
+  
+  .hud-svg-overlay {
+    display: none; /* Hide pointers on tablet/mobile */
+  }
+
+  .split-spotlight-container {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hud-battery-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .hud-battery-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .hud-chassis-col {
+    grid-column: span 1;
+  }
+  
+  .hud-specs-col {
+    gap: 2rem;
+  }
+  
+  .hud-spec-val {
+    font-size: 2.6rem;
+  }
+
+  /* Collapse Sticky Split Screen on Mobile */
+  .split-spotlight-container {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .spotlight-visual-wrapper {
+    display: none; /* Hide sticky panel */
+  }
+
+  .spotlight-text-block {
+    min-height: auto;
+    border-bottom: 1px solid var(--color-border);
+    padding: 3rem 0;
+  }
+
+  .spotlight-mobile-img {
+    display: block; /* Show inline image on mobile */
+  }
+}
+
+/* ==========================================================================
+   3. Tech Feature Strip Card Overhaul & Highlighting
+   ========================================================================== */
+.tech-row-strip {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  height: auto !important; /* Allow card height to govern */
+  width: 100% !important;
+  gap: 1.5rem !important; /* Add gap between bento cards */
+  background: transparent !important; /* Remove solid black strip background */
+  padding: 1.5rem 0 !important;
+}
+
+.tech-strip-card {
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: rgba(15, 15, 20, 0.65) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  height: 320px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  padding: 1.75rem !important;
+  box-sizing: border-box !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  cursor: pointer !important;
+}
+
+.tech-strip-card:hover {
+  transform: translateY(-5px) !important;
+  border-color: rgba(0, 210, 255, 0.35) !important;
+  box-shadow: 0 10px 30px rgba(0, 210, 255, 0.08) !important;
+  background: rgba(20, 20, 25, 0.8) !important;
+}
+
+.tech-strip-card img {
+  width: 100% !important;
+  height: 150px !important; /* Constrain image height */
+  object-fit: contain !important; /* Prevent cropping and show full product details */
+  object-position: center !important;
+  margin: 0 auto 1.25rem auto !important;
+  display: block !important;
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
+  transform: scale(1) !important;
+  background: #ffffff !important; /* Premium white card slot for the product image */
+  border-radius: 14px !important; /* Clean rounded card corners */
+  padding: 1rem !important; /* Elegant spacing around product image */
+  box-sizing: border-box !important;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4)) brightness(1.1) !important; /* Brighter, highlighted image with shadow */
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.tech-strip-card:hover img {
+  transform: scale(1.08) !important; /* Zoom highlight on hover */
+}
+
+.tech-strip-overlay {
+  position: relative !important;
+  inset: auto !important;
+  background: transparent !important; /* Remove dark background gradient */
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  padding: 0 !important;
+  margin-top: auto !important;
+  z-index: 2 !important;
+  width: 100% !important;
+}
+
+.tech-strip-overlay h4 {
+  font-family: var(--font-display, 'Outfit', sans-serif) !important;
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+}
+
+.tech-strip-overlay .bento-tag {
+  margin-bottom: 0.35rem !important;
+  display: inline-block !important;
+}
+
+/* Responsive Overrides for Strip Cards */
+@media (max-width: 1024px) {
+  .tech-row-strip {
+    grid-template-columns: repeat(3, 1fr) !important; /* Keep 3 columns on tablet but adjust card height */
+    gap: 1rem !important;
+  }
+  .tech-strip-card {
+    height: 290px !important;
+    padding: 1.25rem !important;
+  }
+  .tech-strip-card img {
+    height: 130px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .tech-row-strip {
+    grid-template-columns: 1fr !important; /* Stack vertically on mobile */
+    gap: 1.25rem !important;
+  }
+  .tech-strip-card {
+    height: 260px !important;
+    padding: 1.5rem !important;
+  }
+  .tech-strip-card img {
+    height: 120px !important;
+  }
+}
+
+/* ==========================================================================
+   4. Premium alternating borderless rows overhaul (No Bento concept)
+   ========================================================================== */
+.tech-feature-stack {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 4rem 2rem 0 2rem !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.tech-row {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important; /* Symmetrical equal columns */
+  gap: 6rem !important; /* Spacious breathing room between image and text */
+  background: transparent !important; /* No bento card background */
+  border: none !important; /* No borders */
+  border-radius: 0 !important; /* No card rounded corners */
+  overflow: visible !important;
+  margin-bottom: 7rem !important; /* Massive breathing room between rows */
+  min-height: auto !important;
+  box-shadow: none !important; /* No card shadow */
+  align-items: center !important; /* Align content center vertically */
+  transition: none !important;
+}
+
+.tech-row:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.tech-row-img {
+  background: transparent !important; /* Remove white frame */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+  width: 100% !important;
+  height: 400px !important; /* Tall, high-impact display box */
+  border-radius: 28px !important; /* Rounded corners only on the image slot */
+  overflow: hidden !important;
+  box-shadow: none !important; /* Remove shadow to clean frame */
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.tech-row:hover .tech-row-img {
+  transform: translateY(-4px) !important; /* Elegant focus translate */
+  box-shadow: none !important;
+}
+
+.tech-row-img img {
+  width: 100% !important; /* Scale to fill parent card boundaries */
+  height: 100% !important;
+  object-fit: contain !important; /* Fit entire product without cropping */
+  mix-blend-mode: multiply !important; /* Blend light grey image bg with dark page background */
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.tech-row:hover .tech-row-img img {
+  transform: scale(1.04) !important; /* Micro scale detail zoom */
+}
+
+.tech-row-text {
+  background: transparent !important;
+  padding: 0 !important; /* No block padding since card wrapping is gone */
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+}
+
+.tech-row-text h3 {
+  font-family: var(--font-display, 'Outfit', sans-serif) !important;
+  font-size: 2.2rem !important; /* Larger display heading */
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin: 0.5rem 0 1rem 0 !important;
+  line-height: 1.2 !important;
+}
+
+.tech-row-text p {
+  color: var(--color-text-secondary) !important;
+  font-size: 1.05rem !important; /* Better body text size */
+  line-height: 1.65 !important;
+  margin: 0 !important;
+}
+
+.bento-tag {
+  font-size: 0.8rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.15rem !important;
+  color: var(--color-accent-blue) !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.5rem !important;
+  display: inline-block !important;
+}
+
+/* Row Responsive Adjustments */
+@media (max-width: 1024px) {
+  .tech-row {
+    gap: 3rem !important;
+    margin-bottom: 5rem !important;
+  }
+  .tech-row-img {
+    height: 320px !important;
+  }
+  .tech-row-text h3 {
+    font-size: 1.8rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .tech-row {
+    display: flex !important;
+    flex-direction: column !important; /* Stack vertically on mobile */
+    gap: 2rem !important;
+    margin-bottom: 4rem !important;
+  }
+  .tech-row-img {
+    order: 1 !important; /* Image on top */
+    width: 100% !important;
+    height: 280px !important;
+  }
+  .tech-row-text {
+    order: 2 !important; /* Text below image */
+    width: 100% !important;
+    padding: 0 1rem !important;
+  }
+}
+
+/* ==========================================================================
+   5. Interactive Core Tech Modal Image Refinement
+   ========================================================================== */
+.tech-info-img-box {
+  background: transparent !important; /* Remove white frame background */
+  border-radius: 18px !important; /* Floating rounded corners */
+  margin: 1.2rem 1.2rem 0 1.2rem !important; /* Margin around the box */
+  width: calc(100% - 2.4rem) !important; /* Center fit */
+  height: 180px !important;
+  min-height: 180px !important;
+  border: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  box-shadow: none !important; /* Ensure no frame border shadow */
+}
+
+.tech-info-img-box img {
+  transform: scale(1.35) !important; /* Enlarge focused item */
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  width: 90% !important;
+  height: 90% !important;
+  object-fit: contain !important;
+  padding: 0 !important;
+}
+
+/* ==========================================================================
+   6. Design Section Chassis Card Refinement
+   ========================================================================== */
+.design-bike-container {
+  background: #e1e2e6 !important; /* Exact light grey/white background matching extracted_p1_img6_X14.png */
+  border: none !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* ==========================================================================
+   7. Core Technology Fullscreen Immersive Layout
+   ========================================================================== */
+.core-tech-sec {
+  height: 100vh !important;
+  min-height: 780px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  position: relative !important;
+  background: linear-gradient(rgba(10, 11, 18, 0.85), rgba(10, 11, 18, 0.85)), url('assets/Wallpaper/campus_scooter_sunny.webp') no-repeat center 35% !important;
+  background-size: cover !important;
+  background-attachment: scroll !important; /* scroll keeps full image visible without parallax crop */
+  overflow: hidden !important;
+  padding: 0 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.core-tech-sec > .container {
+  height: 100% !important;
+  max-width: 1600px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  padding-top: 6rem !important;
+  padding-bottom: 2rem !important;
+  box-sizing: border-box !important;
+}
+
+.core-tech-sec .section-head {
+  margin-bottom: 2.5rem !important;
+  text-align: center !important;
+  width: 100% !important;
+}
+
+.core-tech-sec .section-head .section-subtitle {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 650px !important;
+  text-align: center !important;
+}
+
+.core-tech-layout-wrapper {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 3.5rem !important;
+  align-items: center !important;
+  width: 100% !important;
+  flex: 1 !important;
+  min-height: 0 !important;
+}
+
+/* Make diagram viewport transparent so it floats directly on top of the campus background wallpaper */
+.core-tech-layout-wrapper .interactive-diagram-container {
+  flex: 1.45 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin-top: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.core-tech-layout-wrapper .diagram-viewport {
+  background: rgba(10, 10, 12, 0.88) !important; /* Restored: Dark card viewport container */
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35) !important;
+  padding: 3rem 0 !important;
+  width: 100% !important;
+  max-width: 1050px !important; /* Lock maximum width to align hotspot percentage metrics */
+  position: relative !important;
+}
+
+.core-tech-layout-wrapper .diagram-img-wrapper {
+  max-width: 1000px !important; /* Overriding inline 800px max-width to enlarge motor image */
+  width: 100% !important;
+  container-type: inline-size !important;
+  container-name: diagram !important;
+}
+
+/* Individual Hotspot Label Positions to cover baked-in text completely on all viewports */
+.core-tech-layout-wrapper .hotspot[data-tech="dashboard"] .hotspot-label {
+  left: -36.07cqw !important;
+  top: -0.70cqw !important;
+  right: auto !important;
+  transform: translateY(-50%) !important;
+}
+.core-tech-layout-wrapper .hotspot[data-tech="converter"] .hotspot-label {
+  left: -33.07cqw !important;
+  top: -0.83cqw !important;
+  right: auto !important;
+  transform: translateY(-50%) !important;
+}
+.core-tech-layout-wrapper .hotspot[data-tech="headlight"] .hotspot-label {
+  left: -29.07cqw !important;
+  top: -0.56cqw !important;
+  right: auto !important;
+  transform: translateY(-50%) !important;
+}
+.core-tech-layout-wrapper .hotspot[data-tech="charger"] .hotspot-label {
+  left: -38.07cqw !important;
+  top: 5.93cqw !important;
+  right: auto !important;
+  transform: translateY(-50%) !important;
+}
+.core-tech-layout-wrapper .hotspot[data-tech="controller"] .hotspot-label {
+  left: -0.46cqw !important;
+  top: -1.11cqw !important;
+  right: auto !important;
+  transform: translateY(-50%) !important;
+}
+.core-tech-layout-wrapper .hotspot[data-tech="tire"] .hotspot-label {
+  left: 0.56cqw !important;
+  top: -1.70cqw !important;
+  right: auto !important;
+  transform: translateY(-50%) !important;
+}
+.core-tech-layout-wrapper .hotspot[data-tech="motor"] .hotspot-label {
+  left: 15.79cqw !important;
+  top: -0.61cqw !important;
+  right: auto !important;
+  transform: translateY(-50%) !important;
+}
+.core-tech-layout-wrapper .hotspot[data-tech="battery"] .hotspot-label {
+  left: 0.11cqw !important;
+  top: 4.94cqw !important;
+  right: auto !important;
+  transform: translateY(-50%) !important;
+}
+
+.core-tech-layout-wrapper .diagram-scooter-img {
+  width: 100% !important;
+  max-height: 75vh !important; /* Enlarged from 60vh */
+  object-fit: contain !important;
+  display: block !important;
+  mix-blend-mode: normal !important; /* Restored: No mix-blend mode */
+}
+
+.core-tech-layout-wrapper .spline-container {
+  height: 650px !important; /* Enlarged from 500px */
+  max-height: 75vh !important; /* Enlarged from 60vh */
+}
+
+/* Floating Glass sidebar info card */
+.core-tech-layout-wrapper .tech-info-card {
+  flex: 0.55 !important;
+  margin-top: 0 !important;
+  background: rgba(10, 10, 12, 0.72) !important;
+  backdrop-filter: blur(25px) !important;
+  -webkit-backdrop-filter: blur(25px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5) !important;
+  width: 100% !important;
+  height: auto !important;
+  max-height: 80vh !important; /* Enlarged from 62vh to accommodate larger content */
+  display: flex !important;
+  overflow: hidden !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.core-tech-layout-wrapper .tech-info-card-inner {
+  grid-template-columns: 1fr !important; /* Stack vertically inside layout */
+  grid-template-rows: auto 1fr !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: grid !important;
+}
+
+.core-tech-layout-wrapper .tech-info-img-box {
+  background: transparent !important; /* Remove white background box */
+  border-radius: 18px !important; /* Floating rounded corners */
+  margin: 1.2rem 1.2rem 0 1.2rem !important; /* Margin around the box */
+  width: calc(100% - 2.4rem) !important; /* Center fit */
+  height: 320px !important; /* Enlarged from 180px */
+  min-height: 320px !important; /* Enlarged from 180px */
+  border: none !important;
+}
+
+.core-tech-layout-wrapper .tech-info-text-box {
+  padding: 2.2rem !important;
+  justify-content: flex-start !important;
+}
+
+/* Responsive constraints below desktop */
+@media (max-width: 991px) {
+  .core-tech-sec {
+    height: auto !important;
+    min-height: auto !important;
+    padding: 6rem 0 !important;
+  }
+  
+  .core-tech-sec > .container {
+    height: auto !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  .core-tech-layout-wrapper {
+    flex-direction: column !important;
+    gap: 2rem !important;
+  }
+  
+  .core-tech-layout-wrapper .interactive-diagram-container {
+    width: 100% !important;
+    height: auto !important;
+  }
+  
+  .core-tech-layout-wrapper .diagram-viewport {
+    background: rgba(10, 14, 10, 0.6) !important; /* Soft backdrop grid support for touch targets on tablet */
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 20px !important;
+    padding: 1.5rem 0 !important;
+  }
+  
+  .core-tech-layout-wrapper .tech-info-card {
+    width: 100% !important;
+    max-height: none !important;
+  }
+  
+  .core-tech-layout-wrapper .tech-info-card-inner {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+  }
+}
+
+.tech-sec {
+  background: linear-gradient(rgba(10, 11, 18, 0.85), rgba(10, 11, 18, 0.85)), url('assets/Wallpaper/campus_scooter_sunny.webp') no-repeat center 35% !important;
+  background-size: cover !important;
+  background-attachment: fixed !important; /* fixed prevents zoom on tall multi-row section */
+}
+
+/* Mobile Portrait Background Framing Override */
+@media (max-width: 768px) {
+  .core-tech-sec {
+    background-position: left 25% !important;
+    background-attachment: scroll !important;
+  }
+  .tech-sec {
+    background-position: left 25% !important;
+    background-attachment: scroll !important; /* Prevents mobile browser fixed parallax stutter/crop bugs */
+  }
+}
+
+
+

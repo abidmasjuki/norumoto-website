@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEQ09628QG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MEQ09628QG');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Norumoto EV | Designed for Tomorrow.</title>
+  <meta name="description" content="Norumoto EV: Silent Performance. Pure Electric Freedom. A premium electric motorcycle with high-capacity 72V 45Ah Lithium Ion battery and IP67 liquid-cooled motor.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css?v=2.7.5">
+  <link rel="stylesheet" href="luyuan_features.css?v=2.7.5">
+  <link rel="stylesheet" href="responsive_fixes.css?v=2.7.5">
+  <link rel="stylesheet" href="bento_layout.css?v=2.7.5">
+  <link rel="stylesheet" href="tech_layout.css?v=2.7.5">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link rel="icon" type="image/png" href="emblem_logo_v3.png" id="page-favicon">
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
+</head>
+<body>
+
+  <!-- Floating Particles Overlay -->
+  <div class="particles-container" id="dust-particles">
+    <!-- Generated dynamically via JS -->
+  </div>
+
+  <!-- Transparent Header -->
+  <header id="main-header">
+    <div class="container nav-flex">
+      <a href="#hero" class="logo-link" id="brand-logo" style="display: flex; align-items: center; gap: 0.75rem;">
+        <img src="emblem_logo_v3.png" alt="Norumoto Emblem" id="logo-img" style="height: 46px; width: auto;">
+        <img src="text_logo_v3.png" alt="NORUMOTO" id="logo-text" style="height: 26px; width: auto; vertical-align: middle;">
+      </a>
+      <nav>
+        <ul id="navigation-menu">
+          <li><a href="#hero" class="active" id="link-home">Home</a></li>
+          <li><a href="#performance" id="link-perf">Performance</a></li>
+          <li><a href="#design" id="link-design">Design</a></li>
+          <li><a href="#technology" id="link-tech">Technology</a></li>
+          <li><a href="#configurator" id="link-config">Configurator</a></li>
+          <li><a href="#specs" id="link-specs">Specifications</a></li>
+          <li><a href="#objections" id="link-objections">FAQ</a></li>
+        </ul>
+      </nav>
+      <div style="display: flex; align-items: center;">
+        <button onclick="toggleLanguage()" class="lang-btn" id="lang-toggle-btn">BM</button>
+        <a href="https://norumoto-ev-test-ride.web.app/" target="_blank" class="nav-cta" id="nav-booking-btn">Test Ride</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Detail Hero Section -->
+  <section class="hero fullscreen-sec" id="hero">
+    <!-- Progressive Image Loading Background Layers -->
+    <div class="hero-bg-placeholder" style="background-image: url('hero_lineup_sunset_blur.jpg');"></div>
+    <div class="hero-bg-main" data-src="hero_lineup_sunset.webp?v=2.0.0"></div>
+
+    <div class="hero-content">
+      <div class="hero-headings">
+        <h1 class="hero-title" id="main-title">Designed for Tomorrow.</h1>
+        <p class="hero-sub" id="hero-description">Norumoto S90 Pro Max: Silent Performance. Pure Electric Freedom.</p>
+      </div>
+      
+      <div class="hero-centerpiece">
+        <div class="hero-spotlight"></div>
+        <div class="spline-container" id="hero-spline-container" style="display: none;">
+          <spline-viewer url="https://prod.spline.design/OP12L0-D1vP-kO1y/scene.splinecode" id="hero-spline-viewer"></spline-viewer>
+        </div>
+        <img src="red_scooter.webp" alt="Norumoto EV Cinematic Render" class="hero-bike-img" id="hero-scooter-image">
+        <div class="reflection-floor"></div>
+      </div>
+      
+      <div class="hero-actions" id="hero-button-group">
+        <button class="btn btn-primary" onclick="scrollToSection('booking')">Reserve Now</button>
+        <a href="https://norumoto-ev-test-ride.web.app/" target="_blank" class="btn btn-secondary" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;"><span>Test Ride</span> ➔</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Performance (Battery Showcase) Section -->
+  <section class="performance-sec battery-showcase-sec" id="performance">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag">Performance & Power</span>
+        <h2 class="section-title">High-Performance Electric Powertrain</h2>
+        <p class="section-subtitle">Equipped with a 3,000 W liquid-cooled motor (5,200 W peak) and a high-capacity 72V 45Ah Lithium Ion battery system for up to 120 km range and 83 km/h top speed.</p>
+      </div>
+
+      <div class="hud-battery-layout-grid reveal">
+        <!-- Card 1: Power System -->
+        <div class="hud-spec-card">
+          <span class="hud-spec-tag">Power System</span>
+          <h3 class="hud-spec-title">72V 45Ah Lithium Ion</h3>
+          <div class="hud-spec-val">72<span class="hud-spec-unit">V</span> <span style="font-size: 1.5rem; color: rgba(255,255,255,0.15); margin: 0 0.5rem;">/</span> 45<span class="hud-spec-unit">Ah</span></div>
+          <p class="hud-spec-desc">Uses high-density lithium-ion cells for smooth acceleration and exceptional mileage.</p>
+        </div>
+        
+        <!-- Card 2: Motor -->
+        <div class="hud-spec-card">
+          <span class="hud-spec-tag">Motor</span>
+          <h3 class="hud-spec-title">3,000W / 5,200W Peak</h3>
+          <div class="hud-spec-val">3,000<span class="hud-spec-unit">W</span></div>
+          <p class="hud-spec-desc">Nominal power of the liquid-cooled electric motor with responsive instant torque.</p>
+        </div>
+
+        <!-- Card 3: Riding Range -->
+        <div class="hud-spec-card">
+          <span class="hud-spec-tag">Riding Range</span>
+          <h3 class="hud-spec-title">Up to 120 km Range</h3>
+          <div class="hud-spec-val">120<span class="hud-spec-unit"> km</span></div>
+          <p class="hud-spec-desc">Maximum riding range per full charge when operating in energy-efficient Speed Mode 1.</p>
+        </div>
+
+        <!-- Card 4: Velocity -->
+        <div class="hud-spec-card">
+          <span class="hud-spec-tag">Velocity</span>
+          <h3 class="hud-spec-title">83 km/h Top Speed</h3>
+          <div class="hud-spec-val">83<span class="hud-spec-unit"> km/h</span></div>
+          <p class="hud-spec-desc">High maximum speed to navigate highways easily, climbing angles up to 30°.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Design Section -->
+  <section class="design-sec" id="design">
+    <div class="container">
+      <div class="design-grid">
+        <div class="design-gallery reveal">
+          <div class="design-bike-container">
+            <img src="extracted_p1_img6_X14.png" alt="Norumoto S90 Pro Max 3D Internal Render" class="design-bike-img" id="design-display-image" style="max-height: 55vh; object-fit: contain;">
+          </div>
+        </div>
+        
+        <div class="design-content reveal">
+          <div>
+            <span class="section-tag">Chassis & Braking</span>
+            <h2 class="section-title" style="margin-bottom: 1rem;">Robust Chassis & Suspension</h2>
+            <p style="color: var(--color-text-secondary); line-height: 1.6;">Engineered with high-tensile steel, dual hydraulic suspension, and Combined Braking System (CBS) for maximum stability on Malaysian roads.</p>
+          </div>
+          
+          <div class="design-feature">
+            <div class="design-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="design-feature-svg"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="3" fill="currentColor"></circle></svg>
+            </div>
+            <div class="design-feature-text">
+              <h3>Dual Hydraulic Suspension</h3>
+              <p>Aluminum hydraulic cylinder (front) and hydraulic spring shock absorber (rear) to absorb rough road vibrations.</p>
+            </div>
+          </div>
+          
+          <div class="design-feature">
+            <div class="design-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="design-feature-svg"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="3" fill="currentColor"></circle></svg>
+            </div>
+            <div class="design-feature-text">
+              <h3>Combined Braking System (CBS)</h3>
+              <p>Front and rear hydraulic disc brakes with CBS for balanced, stable, and safe stopping power.</p>
+            </div>
+          </div>
+          
+          <div class="design-feature">
+            <div class="design-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="design-feature-svg"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="3" fill="currentColor"></circle></svg>
+            </div>
+            <div class="design-feature-text">
+              <h3>12-inch Alloy Tubeless Tyres</h3>
+              <p>Fitted with 90/90-12 front and 100/80-12 rear tubeless tyres on lightweight alloy rims for ultimate grip.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology / Displays Showcase Section -->
+  <section class="technology-sec tech-sec" id="technology">
+    <div class="container">
+      <div class="dual-displays-header reveal">
+        <div class="displays-text">
+          <span class="section-tag">Smart Features & Utility</span>
+          <h2 class="section-title">Smart Technology & Practical Design</h2>
+          <p class="section-subtitle">Every engineering detail is designed for precision, daily utility, and intuitive smart riding.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Full-Width Feature Rows (no container constraint) -->
+    <div class="tech-feature-stack reveal">
+
+      <!-- Row 1: Dashboard hero — image LEFT, text RIGHT -->
+      <div class="tech-row tech-row--img-left">
+        <div class="tech-row-img">
+          <img src="assets/luyuan/dual_displays_main.png" alt="Smart Cockpit Display">
+        </div>
+        <div class="tech-row-text">
+          <span class="bento-tag">Smart Cockpit</span>
+          <h3>Dual Smart LED / TFT Digital Screen</h3>
+          <p>Twin integrated high-definition digital screens on the handlebar provide optimal digital readouts of speed, battery status, and diagnostics at a single glance.</p>
+        </div>
+      </div>
+
+      <!-- Row 2: Buttons — image RIGHT, text LEFT -->
+      <div class="tech-row tech-row--img-right">
+        <div class="tech-row-text">
+          <span class="bento-tag">Controls</span>
+          <h3>3 Riding Modes & Reverse</h3>
+          <p>Ergonomically positioned switchgear allows riders to toggle between 3 speed modes and activate reverse mode for effortless navigation.</p>
+        </div>
+        <div class="tech-row-img">
+          <img src="assets/luyuan/buttons_detail.png" alt="Ergonomic Controls">
+        </div>
+      </div>
+
+      <!-- Row-3: Front Pocket — image LEFT, text RIGHT -->
+      <div class="tech-row tech-row--img-left">
+        <div class="tech-row-img">
+          <img src="assets/luyuan/front_pocket_detail.png" alt="Front Storage Pocket">
+        </div>
+        <div class="tech-row-text">
+          <span class="bento-tag">Storage</span>
+          <h3>Smart Convenience & USB Port</h3>
+          <p>Integrated weatherproof front pocket complete with a fast-charging USB port to power devices, with anti-theft alarm and GPS tracking support.</p>
+        </div>
+      </div>
+
+      <!-- Row 4: Taillight — image RIGHT, text LEFT -->
+      <div class="tech-row tech-row--img-right">
+        <div class="tech-row-text">
+          <span class="bento-tag">Lighting</span>
+          <h3>Aerodynamic LED Lighting</h3>
+          <p>High-intensity wrap-around headlight and taillight providing superior visibility alerts and aerodynamic styling.</p>
+        </div>
+        <div class="tech-row-img">
+          <img src="assets/luyuan/taillight_detail.png" alt="Smart LED Taillight">
+        </div>
+      </div>
+
+      <!-- Row 5: Underseat Storage — image LEFT, text RIGHT -->
+      <div class="tech-row tech-row--img-left">
+        <div class="tech-row-img">
+          <img src="assets/luyuan/underseat_storage_detail.png" alt="Underseat Storage">
+        </div>
+        <div class="tech-row-text">
+          <span class="bento-tag">Underseat Storage</span>
+          <h3>Comfortable All-Weather Seat</h3>
+          <p>Premium all-weather seat offering secure underseat compartment space, with a high 150 mm ground clearance to navigate curbs.</p>
+        </div>
+      </div>
+
+      <!-- Row 6: Side Profile — image RIGHT, text LEFT -->
+      <div class="tech-row tech-row--img-right">
+        <div class="tech-row-text">
+          <span class="bento-tag">Aerodynamics</span>
+          <h3>Malaysian Road Compliance</h3>
+          <p>Officially road-legal with VTA JPJ approval, backed by a standard 2-years or 20,000 km warranty for peace of mind.</p>
+        </div>
+        <div class="tech-row-img">
+          <img src="assets/luyuan/side_view_detail.png" alt="Aerodynamic Profile">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Interactive Core Technology Section -->
+  <section class="core-tech-sec" id="core-technology">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag">Core Technology</span>
+        <h2 class="section-title">Advanced EV Engineering</h2>
+        <p class="section-subtitle">Explore the advanced engineering, power electronics, and high-performance components of Norumoto EV.</p>
+      </div>
+
+      <!-- Layout Wrapper for horizontal display on desktop -->
+      <div class="core-tech-layout-wrapper">
+        <!-- Diagram inside container -->
+        <div class="interactive-diagram-container reveal">
+          <div class="diagram-viewport">
+            <div class="spline-container" id="diagram-spline-container" style="display: none; height: 500px; max-height: 60vh; border: none; box-shadow: none; background: transparent; margin: 0 auto; z-index: 5;">
+              <spline-viewer url="https://prod.spline.design/OP12L0-D1vP-kO1y/scene.splinecode" id="diagram-spline-viewer"></spline-viewer>
+            </div>
+            <div class="diagram-img-wrapper" style="position: relative; width: 100%; display: inline-block; max-width: 800px; margin: 0 auto;">
+              <img src="assets/luyuan/core_technology_scooter.png?v=2.5.5" alt="Norumoto S90 Pro Max Core Technology" class="diagram-scooter-img">
+
+              <!-- Flashing Hotspots -->
+              <div class="hotspot" style="left: 48%; top: 25%;" data-tech="dashboard">
+                <div class="hotspot-pulse"></div><div class="hotspot-dot"></div>
+                <div class="hotspot-label left-label">Solid State Dashboard</div>
+              </div>
+              <div class="hotspot" style="left: 45%; top: 44%;" data-tech="converter">
+                <div class="hotspot-pulse"></div><div class="hotspot-dot"></div>
+                <div class="hotspot-label left-label">Solid State Converter / Hub</div>
+              </div>
+              <div class="hotspot" style="left: 41%; top: 57%;" data-tech="headlight">
+                <div class="hotspot-pulse"></div><div class="hotspot-dot"></div>
+                <div class="hotspot-label left-label">Solid State Headlight</div>
+              </div>
+              <div class="hotspot" style="left: 50%; top: 56%;" data-tech="charger">
+                <div class="hotspot-pulse"></div><div class="hotspot-dot"></div>
+                <div class="hotspot-label left-label">Solid State Charger</div>
+              </div>
+              <div class="hotspot" style="left: 64%; top: 28%;" data-tech="controller">
+                <div class="hotspot-pulse"></div><div class="hotspot-dot"></div>
+                <div class="hotspot-label right-label">Solid State Controller</div>
+              </div>
+              <div class="hotspot" style="left: 66%; top: 41%;" data-tech="tire">
+                <div class="hotspot-pulse"></div><div class="hotspot-dot"></div>
+                <div class="hotspot-label right-label">Graphene Steel Wire Tyre</div>
+              </div>
+              <div class="hotspot" style="left: 64%; top: 48%;" data-tech="motor">
+                <div class="hotspot-pulse"></div><div class="hotspot-dot"></div>
+                <div class="hotspot-label right-label">Liquid-cooled Motor 2.0</div>
+              </div>
+              <div class="hotspot" style="left: 54%; top: 61%;" data-tech="battery">
+                <div class="hotspot-pulse"></div><div class="hotspot-dot"></div>
+                <div class="hotspot-label right-label">High-energy Graphene Battery / Super Lithium Battery</div>
+              </div>
+            </div>
+
+            <!-- Auto-cycle progress bar -->
+            <div id="tech-cycle-bar" style="position: absolute; bottom: 0; left: 0; height: 3px; width: 0%; background: linear-gradient(to right, #00d2ff, #10b981); transition: width 2.9s linear; z-index: 30;"></div>
+          </div>
+        </div>
+
+        <!-- Info Card -->
+        <div id="tech-info-modal" class="tech-info-card reveal">
+          <div class="tech-info-card-inner">
+            <div class="tech-info-img-box">
+              <img id="tech-modal-img" src="assets/luyuan/solid_state_dashboard.png" alt="Solid State Component">
+            </div>
+            <div class="tech-info-text-box">
+              <h3 id="tech-modal-title">Select a Component</h3>
+              <p id="tech-modal-desc">Click any glowing green dot above — or watch the auto-tour cycle through each Norumoto Solid State technology in detail.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- Interactive Color Configurator Section -->
+  <section class="configurator-sec" id="configurator">
+    <div class="container">
+      <div class="config-grid">
+        <div class="config-visual-container reveal">
+          <div class="spline-container" id="config-spline-container" style="display: none;">
+            <spline-viewer url="https://prod.spline.design/OP12L0-D1vP-kO1y/scene.splinecode" id="config-spline-viewer"></spline-viewer>
+          </div>
+          <img src="red_scooter.webp" alt="Customized Norumoto EV" class="config-visual-img" id="configurator-image">
+        </div>
+        
+        <div class="config-side-panel reveal">
+          <div>
+            <span class="section-tag">Design Studio</span>
+            <h2 class="config-title">Select Your Aesthetic</h2>
+          </div>
+          
+          <div class="config-picker-wrapper">
+            <span class="picker-label">Exterior Color: <strong id="selected-color-label" style="color: #ffffff;">Crimson Red</strong></span>
+            <div class="color-picker-flex">
+              <div class="color-picker-dot color-red active" onclick="changeColor('red', 'Crimson Red')" title="Crimson Red" id="opt-color-red"></div>
+              <div class="color-picker-dot color-blue" onclick="changeColor('blue', 'Skyline Blue')" title="Skyline Blue" id="opt-color-blue"></div>
+              <div class="color-picker-dot color-grey" onclick="changeColor('grey', 'Mystic Silver')" title="Mystic Silver" id="opt-color-grey"></div>
+              <div class="color-picker-dot color-black" onclick="changeColor('black', 'Midnight Black')" title="Midnight Black" id="opt-color-black"></div>
+            </div>
+            <p class="config-color-desc" id="config-color-desc" style="color: var(--color-text-secondary); margin-top: 0.85rem; font-size: 0.95rem; line-height: 1.5; font-family: 'Inter', sans-serif;">Bold, sporty red highlighting dynamic performance.</p>
+          </div>
+          
+          <div class="config-picker-wrapper">
+            <span class="picker-label">Smart Performance Modes</span>
+            <div class="config-mode-list">
+              <div class="config-mode-item active" onclick="changeMode('eco', this)" id="mode-eco">
+                <div class="config-mode-info">
+                  <h4>Eco Mode</h4>
+                  <p>Extends maximum urban range for long commutes.</p>
+                </div>
+                <span class="config-mode-badge" id="badge-eco-val">120 km</span>
+              </div>
+              <div class="config-mode-item" onclick="changeMode('normal', this)" id="mode-normal">
+                <div class="config-mode-info">
+                  <h4>City Mode</h4>
+                  <p>Optimal balance of acceleration and power conservation.</p>
+                </div>
+                <span class="config-mode-badge" id="badge-normal-val">90 km</span>
+              </div>
+              <div class="config-mode-item" onclick="changeMode('sport', this)" id="mode-sport">
+                <div class="config-mode-info">
+                  <h4>Sport Mode</h4>
+                  <p>Full electric motor output for maximum acceleration.</p>
+                </div>
+                <span class="config-mode-badge" id="badge-sport-val">65 km</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specifications Section -->
+  <section class="specs-sec" id="specs">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag">Technical Specifications</span>
+        <h2 class="section-title">Engineering Precision</h2>
+        <p class="section-subtitle">Standard specifications and official compliance certifications of Norumoto EV for the Malaysian market.</p>
+      </div>
+      
+      <div class="specs-grid reveal">
+        <div class="specs-column">
+          <!-- PERFORMANCE -->
+          <div class="specs-group">
+            <h3 class="specs-group-title">PERFORMANCE</h3>
+            <div class="specs-row">
+              <span class="specs-lbl">Maximum Speed</span>
+              <span class="specs-val">83 km/h</span>
+            </div>
+            <div class="specs-row">
+              <span class="specs-lbl">Range</span>
+              <span class="specs-val">Up to 120 km (Per full charge in Speed Mode 1)</span>
+            </div>
+            <div class="specs-row">
+              <span class="specs-lbl">Maximum Climbing Angle</span>
+              <span class="specs-val">Up to 30°</span>
+            </div>
+          </div>
+
+          <!-- POWER SYSTEM & BATTERY -->
+          <div class="specs-group" style="margin-top: 2rem;">
+            <h3 class="specs-group-title">POWER SYSTEM & BATTERY</h3>
+            <div class="specs-row">
+              <span class="specs-lbl">Nominal Motor Power</span>
+              <span class="specs-val">3,000 W (Liquid-Cooled Motor System)</span>
+            </div>
+            <div class="specs-row">
+              <span class="specs-lbl">Peak Motor Power</span>
+              <span class="specs-val">5,200 W</span>
+            </div>
+            <div class="specs-row">
+              <span class="specs-lbl">Battery Type</span>
+              <span class="specs-val">72V 45Ah Lithium Ion</span>
+            </div>
+            <div class="specs-row">
+              <span class="specs-lbl">Charging System</span>
+              <span class="specs-val">Fast Charging / 4.5 to 6 Hours</span>
+            </div>
+            <div class="specs-row">
+              <span class="specs-lbl">Riding Modes</span>
+              <span class="specs-val">3 Speed Modes + Reverse Mode</span>
+            </div>
+            <div class="specs-row">
+              <span class="specs-lbl">Ingress Protection</span>
+              <span class="specs-val">IP67 Rated</span>
+            </div>
+          </div>
+
+          <!-- DIMENSIONS & WEIGHT -->
+          <div class="specs-group" style="margin-top: 2rem;">
+            <h3 class="specs-group-title">DIMENSIONS & WEIGHT</h3>
+            <div class="specs-row">
+              <span class="specs-lbl">Dimensions (L x W x H)</span>
+              <span class="specs-val">1,835 mm x 705 mm x 1,085 mm</span>
+            </div>
+            <div class="specs-row">
+              <span class="specs-lbl">Wheelbase</span>
+              <span class="specs-val">1,300 mm</span>
+            </div>
+            <div class="specs-row">
+              <span class="specs-lbl">Ground Clearance</span>
+              <span class="specs-val">150 mm</span>
+            </div>
+            <div class="specs-row">
+              <span class="specs-lbl">Vehicle Weight (Without Battery)</span>
+              <span class="specs-val">79 kg</span>
+            </div>
+            <div class="specs-row">
+              <span class="specs-lbl">Battery Weight</span>
+              <span class="specs-val">32 kg</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="specs-column">
+          <!-- CHASSIS & CONTROL SYSTEM -->
+          <div class="specs-group">
+            <h3 class="specs-group-title">CHASSIS & CONTROL SYSTEM</h3>
+            <div class="specs-row">
+              <span class="specs-lbl">Front Brake</span>
+              <span class="specs-val">Hydraulic Disc</span>
+            </div>
+            <div class="specs-row">
+              <span class="specs-lbl">Rear Brake</span>
+              <span class="specs-val">Hydraulic Disc with CBS (Combined Braking System)</span>
+            </div>
+            <div class="specs-row">
+              <span class="specs-lbl">Front Suspension</span>
+              <span class="specs-val">Aluminum Hydraulic Cylinder</span>
+            </div>
+            <div class="specs-row">
+              <span class="specs-lbl">Rear Suspension</span>
+              <span class="specs-val">Hydraulic Spring Shock Absorber</span>
+            </div>
+            <div class="specs-row">
+              <span class="specs-lbl">Front Tyre Size</span>
+              <span class="specs-val">90/90-12 (12-inch Alloy Rim, Tubeless Tyre)</span>
+            </div>
+            <div class="specs-row">
+              <span class="specs-lbl">Rear Tyre Size</span>
+              <span class="specs-val">100/80-12 (12-inch Alloy Rim, Tubeless Tyre)</span>
+            </div>
+          </div>
+
+          <!-- SMART FEATURES & SAFETY -->
+          <div class="specs-group" style="margin-top: 2rem;">
+            <h3 class="specs-group-title">SMART FEATURES & SAFETY</h3>
+            <div class="specs-row">
+              <span class="specs-lbl">Key System / Ignition</span>
+              <span class="specs-val">NFC Card Scanner (Keyless Entry)</span>
+            </div>
+            <div class="specs-row">
+              <span class="specs-lbl">Instrument Display Panel</span>
+              <span class="specs-val">Smart LED / TFT Digital Screen</span>
+            </div>
+            <div class="specs-row">
+              <span class="specs-lbl">Lighting System</span>
+              <span class="specs-val">Full LED Headlight (Aerodynamic), Turn Signals and Taillights</span>
+            </div>
+            <div class="specs-row">
+              <span class="specs-lbl">Additional Features</span>
+              <span class="specs-val">Built-in USB Charging Port, Anti-Theft Alarm & Hub Motor Lock, GPS Tracker</span>
+            </div>
+            <div class="specs-row">
+              <span class="specs-lbl">Warranty</span>
+              <span class="specs-val">2-years Warranty OR 20,000 km whichever comes first</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Objections & FAQ Section -->
+  <section class="faq-sec" id="objections">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag">Frequently Asked Questions</span>
+        <h2 class="section-title">Your Doubts Answered</h2>
+        <p class="section-subtitle">Check official answers regarding the capabilities, compliance, and warranty of Norumoto EV's premium technology.</p>
+      </div>
+
+      <div class="faq-accordion reveal">
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Can the S90 Pro Max be ridden through floods?</h3>
+            <span class="faq-toggle"><i class="icon-plus">+</i></span>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, the S90 Pro Max motor and battery are officially IP67 certified (weatherproof and dustproof). It has been tested to safely wade through water up to 1 foot deep (clearing the 12-inch wheel size) without any electrical issues.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>How long is the lifespan of the Lithium Ion battery, and how does it compare to LFP?</h3>
+            <span class="faq-toggle"><i class="icon-plus">+</i></span>
+          </div>
+          <div class="faq-answer">
+            <p>The high-capacity 72V 45Ah Lithium Ion battery pack has a life expectancy exceeding 50,000 km, backed by a standard 2-years or 20,000 km warranty. Unlike heavy, low energy-density lead-acid or standard LFP batteries, this lithium pack is lightweight (32 kg) and retains high charging efficiency over years of daily use.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>If the battery is damaged, does the entire unit need to be replaced?</h3>
+            <span class="faq-toggle"><i class="icon-plus">+</i></span>
+          </div>
+          <div class="faq-answer">
+            <p>No. The S90 Pro Max battery features a modular design. If a specific module degrades after extensive usage, only the affected module needs to be replaced. This makes servicing highly cost-effective without needing to discard the entire battery pack.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Is this electric scooter road-legal and registerable with JPJ?</h3>
+            <span class="faq-toggle"><i class="icon-plus">+</i></span>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, the Norumoto S90 Pro Max has received official Vehicle Type Approval (VTA) from the Malaysian Road Transport Department (JPJ). You can register it and ride legally on public roads. Road tax and insurance can be arranged easily upon purchase.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reservation Section (Refocused on Test Ride via official portal) -->
+  <section class="reserve-sec" id="booking">
+    <div class="container">
+      <div class="reserve-layout">
+        <div class="reserve-details reveal">
+          <span class="section-tag">Test Ride</span>
+          <h3>Experience Norumoto Today.</h3>
+          <p>Schedule your exclusive test ride session. Complete the questionnaire, verify your credentials, and sign the official liability waiver to begin your ride.</p>
+          
+          <div style="margin-top: 2rem;">
+            <p style="font-size: 0.9rem; color: var(--color-text-secondary);">✓ Fully Compliant & Secure</p>
+            <p style="font-size: 0.9rem; color: var(--color-text-secondary); margin-top: 0.5rem;">✓ Official JPJ VTA Road Approval</p>
+            <p style="font-size: 0.9rem; color: var(--color-text-secondary); margin-top: 0.5rem;">✓ Signed Liability Waiver Integration</p>
+          </div>
+        </div>
+        
+        <div class="reserve-form-panel reveal">
+          <!-- Embedded Test Ride Portal Iframe -->
+          <div class="test-ride-iframe-wrapper" style="width: 100%; height: 680px; border-radius: 16px; overflow: hidden; background: #0c0d12; border: 1px solid rgba(255, 255, 255, 0.08);">
+            <iframe src="https://norumoto-ev-test-ride.web.app/" style="width: 100%; height: 100%; border: none;" title="Norumoto Test Ride Booking"></iframe>
+          </div>
+          <div style="text-align: center; margin-top: 1rem;">
+            <a href="https://norumoto-ev-test-ride.web.app/" target="_blank" style="color: var(--color-accent-blue); text-decoration: none; font-size: 0.85rem; font-weight: 500; display: inline-flex; align-items: center; gap: 0.25rem;">
+              Open Test Ride Portal in new tab ➔
+            </a>
+          </div>
+          
+          <div class="form-status" id="form-status-alert" style="display: none;"></div>
+          
+          <!-- Wizard Progress Bar (Hidden) -->
+          <div class="booking-progress-container" style="display: none;">
+            <div class="booking-progress-bar">
+              <div class="progress-line-active" id="progress-line"></div>
+              <div class="progress-step active" id="step-marker-1">1
+                <span class="progress-step-label">Info</span>
+              </div>
+              <div class="progress-step" id="step-marker-2">2
+                <span class="progress-step-label">Address</span>
+              </div>
+              <div class="progress-step" id="step-marker-3">3
+                <span class="progress-step-label">Payment</span>
+              </div>
+            </div>
+          </div>
+          
+          <form id="lead-booking-form" onsubmit="submitLeadForm(event)" style="display: none;">
+            
+            <!-- STEP 1: INFO & TIMING -->
+            <div class="form-step active" id="form-step-1">
+              <div class="form-grid">
+                <!-- Full Name -->
+                <div class="form-group form-group-full" id="group-name">
+                  <label for="input-name" class="form-label">Full Name</label>
+                  <input type="text" id="input-name" class="form-input" placeholder="Your full name" required>
+                </div>
+
+                <!-- Phone Number -->
+                <div class="form-group form-group-full" id="group-phone">
+                  <label for="input-phone" class="form-label">Phone Number</label>
+                  <input type="tel" id="input-phone" class="form-input" placeholder="e.g., 0123456789" required>
+                </div>
+
+                <!-- Enquiry Type Tabs (Hidden as Test Ride is moved to dedicated portal) -->
+                <div class="form-group form-group-full" style="display: none;">
+                  <label class="form-label">Enquiry Type</label>
+                  <div class="booking-tabs">
+                    <button type="button" class="booking-tab-btn" id="tab-test-ride" onclick="selectBookingType('test-ride')">Test Ride</button>
+                    <button type="button" class="booking-tab-btn active" id="tab-pre-order" onclick="selectBookingType('pre-order')">Pre-Order</button>
+                  </div>
+                  <input type="hidden" id="input-enquiry" value="pre-order">
+                </div>
+
+                <!-- Conditional Date & Time (Hidden as Test Ride is moved to dedicated portal) -->
+                <div class="form-group form-group-full" id="group-datetime" style="display: none;">
+                  <label class="form-label">Preferred Date & Time for Test Ride</label>
+                  <div class="datetime-container">
+                    <input type="date" id="input-booking-date" class="form-input">
+                    <input type="time" id="input-booking-time" class="form-input">
+                  </div>
+                </div>
+              </div>
+              
+              <div class="wizard-actions">
+                <div></div>
+                <button type="button" class="btn btn-primary" onclick="goToNextStep()">Next ➔</button>
+              </div>
+            </div>
+
+            <!-- STEP 2: ADDRESS & LOCATION -->
+            <div class="form-step" id="form-step-2">
+              <div class="form-grid">
+                <!-- Delivery Address -->
+                <div class="form-group form-group-full" id="group-address">
+                  <label for="input-address" class="form-label">Delivery Address</label>
+                  <input type="text" id="input-address" class="form-input" placeholder="Your complete delivery address" required>
+                </div>
+
+                <!-- Map Coordinate Picker (Leaflet) -->
+                <div class="form-group form-group-full" id="group-coords">
+                  <label class="form-label">Delivery Coordinates (Pin Your Location)</label>
+                  <div class="map-leaflet-wrapper">
+                    <div id="leaflet-map"></div>
+                    <div class="map-gps-btn" onclick="triggerGeoLocation(event)" title="Find My Location">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+                    </div>
+                  </div>
+                  <div class="map-coords-row" style="margin-top: 0.5rem;">
+                    <input type="text" id="coord-lat" class="form-input" value="3.1390" readonly>
+                    <input type="text" id="coord-lng" class="form-input" value="101.6869" readonly>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="wizard-actions">
+                <button type="button" class="btn btn-kembali" onclick="goToPrevStep()">⎌ Back</button>
+                <button type="button" class="btn btn-primary" onclick="goToNextStep()">Next ➔</button>
+              </div>
+            </div>
+
+            <!-- STEP 3: DEALERSHIP & PAYMENT -->
+            <div class="form-step" id="form-step-3">
+              <div class="form-grid">
+                <!-- Dealership Dropdown -->
+                <div class="form-group form-group-full" id="group-dealership">
+                  <label for="input-dealership" class="form-label">Preferred Dealership</label>
+                  <select id="input-dealership" class="form-input" required>
+                    <option value="" disabled selected>Loading Dealerships...</option>
+                  </select>
+                </div>
+
+                <!-- Payment Method Selection -->
+                <div class="form-group form-group-full">
+                  <label class="form-label">Preferred Payment Method</label>
+                  <div class="payment-card-grid">
+                    <div class="payment-card active" id="pay-card-rakyat" onclick="selectPaymentMethod('Loan - Bank Rakyat')">
+                      <div class="payment-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="3" x2="21" y1="22"/><line x1="6" x2="6" y1="18"/><line x1="10" x2="10" y1="18"/><line x1="14" x2="14" y1="18"/><line x1="18" x2="18" y1="18"/><path d="M12 2 2 7h20L12 2z"/><path d="M2 11h20v3H2z"/></svg>
+                      </div>
+                      <div class="payment-card-title">Bank Rakyat</div>
+                      <div class="payment-card-desc">EV financing with exclusive low interest rates.</div>
+                    </div>
+                    <div class="payment-card" id="pay-card-aeon" onclick="selectPaymentMethod('Loan - AEON Credit')">
+                      <div class="payment-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10"/></svg>
+                      </div>
+                      <div class="payment-card-title">AEON Credit</div>
+                      <div class="payment-card-desc">Fast approval & easy documentation.</div>
+                    </div>
+                    <div class="payment-card" id="pay-card-card" onclick="selectPaymentMethod('Credit Card Installment')">
+                      <div class="payment-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="19" x2="5" y1="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+                      </div>
+                      <div class="payment-card-title">Credit Card</div>
+                      <div class="payment-card-desc">Easy installment plan with 0% interest.</div>
+                    </div>
+                    <div class="payment-card" id="pay-card-cash" onclick="selectPaymentMethod('Cash')">
+                      <div class="payment-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><line x1="6" x2="6.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="12" y2="12"/></svg>
+                      </div>
+                      <div class="payment-card-title">Cash / Transfer</div>
+                      <div class="payment-card-desc">Direct cash payment or official bank transfer.</div>
+                    </div>
+                  </div>
+                  <input type="hidden" id="input-payment" value="Loan - Bank Rakyat">
+                </div>
+              </div>
+              
+              <div class="wizard-actions">
+                <button type="button" class="btn btn-kembali" onclick="goToPrevStep()">⎌ Back</button>
+                <button type="submit" class="btn btn-primary" id="btn-submit-booking">Submit Booking ✓</button>
+              </div>
+            </div>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Minimal Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-column">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+            <img src="emblem_logo_v3.png" alt="Norumoto Emblem" style="height: 55px; width: auto;">
+            <img src="text_logo_v3.png" alt="NORUMOTO" style="height: 28px; width: auto;">
+          </div>
+          <p class="footer-brand-desc">World-class premium electric mobility engineering. Proudly Malaysian.</p>
+          <div class="footer-social-links" style="display: flex; gap: 1rem; margin-top: 1.25rem;">
+            <a href="https://www.facebook.com/norumoto/" target="_blank" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; display: flex; align-items: center; gap: 0.25rem; transition: color 0.2s;" onmouseover="this.style.color='#10b981'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg> Facebook
+            </a>
+            <a href="https://www.tiktok.com/@norumoto" target="_blank" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; display: flex; align-items: center; gap: 0.25rem; transition: color 0.2s;" onmouseover="this.style.color='#10b981'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.86-.74-3.99-1.72-.28-.24-.53-.5-.77-.78-.07 1.72-.15 3.44-.22 5.16-.09 1.68-.4 3.39-1.16 4.9-1.14 2.26-3.23 3.94-5.69 4.49-1.29.29-2.63.35-3.95.14-2.23-.35-4.3-1.64-5.55-3.52-1.2-1.8-1.66-4.08-1.29-6.22.37-2.13 1.56-4.09 3.35-5.26 1.76-1.15 3.93-1.59 5.97-1.17v4.21c-1.13-.33-2.38-.19-3.4.4-.95.55-1.59 1.54-1.77 2.63-.22 1.34.22 2.74 1.18 3.66.97.93 2.37 1.25 3.66.86 1.09-.33 1.99-1.18 2.37-2.24.42-1.18.33-2.48.33-3.74V0z"/></svg> TikTok
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <span class="footer-column-title">Model</span>
+          <ul class="footer-links">
+            <li><a href="#hero">Norumoto S90 Pro Max</a></li>
+            <li><a href="#configurator">Configurator</a></li>
+            <li><a href="#specs">Specifications</a></li>
+          </ul>
+        </div>
+        
+        
+        
+        <div class="footer-column" style="grid-column: span 2;">
+          <span class="footer-column-title">Contact Us</span>
+          <p style="color: var(--color-text-secondary); font-size: 0.85rem; line-height: 1.6; margin-bottom: 0.75rem;">
+            <strong>HQ Office:</strong><br>
+            NORUMOTO SDN. BHD. (202401040714)<br>
+            <a href="https://maps.app.goo.gl/D9PetZURPeHo9MrM8" target="_blank">
+              LOT 79979, Jalan Desa Surada, Kg Sungai Ramal Dalam,<br>
+              43000 Kajang, Selangor.
+            </a><br>
+            Contact: <a href="tel:+60138363105">+60 13-836 3105</a> (Khairul) / <a href="tel:+60199345212">+60 19-934 5212</a> (Abid)
+          </p>
+          <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 0.75rem; margin-top: 0.75rem;">
+            <span class="footer-column-title" style="margin-bottom: 0.5rem; display: block;">Authorized Service Center</span>
+            <p style="color: var(--color-text-secondary); font-size: 0.85rem; line-height: 1.6; margin-bottom: 0.5rem;">
+              <strong>Young Mechanics Sdn Bhd</strong> (202401046779)<br>
+              <a href="https://www.google.com/maps/search/?api=1&query=Young+Mechanics+Sdn+Bhd+70+Jalan+SC+3+Pusat+Perindustrian+Sungai+Chua+Kajang" target="_blank">
+                70, Jalan SC 3, Pusat Perindustrian Sungai Chua,<br>
+                43000 Kajang, Selangor.
+              </a>
+              (Tel: <a href="tel:+60196225874">019-622 5874</a>)
+            </p>
+            <img src="extracted_p3_img3_X14.png" alt="Young Mechanics Logo" style="height: 35px; width: auto; opacity: 0.85; margin-top: 0.25rem;">
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Norumoto EV Malaysia. All Rights Reserved.</p>
+        <p>System v2.7.5</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating AI Assistant Widget -->
+  <div class="ai-chat-widget" id="norumoto-chat-widget">
+    <button class="chat-toggle-btn" id="chat-toggle" onclick="toggleChatWindow()">
+      <span class="chat-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </span>
+      <span class="chat-pulse"></span>
+    </button>
+    
+    <div class="chat-window" id="chat-window">
+      <div class="chat-header">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <img src="syazwani_avatar.jpg" class="chat-avatar" alt="Syazwani" style="object-fit: cover;">
+          <div style="text-align: left;">
+            <h4 style="margin: 0; font-size: 0.85rem; font-weight: 600; color: #fff; line-height: 1.2;">Syazwani</h4>
+            <span style="font-size: 0.65rem; color: #10b981; display: flex; align-items: center; gap: 0.25rem; margin-top: 0.1rem;">
+              <span style="display: inline-block; width: 5px; height: 5px; background: #10b981; border-radius: 50%;"></span>
+              Sales Executive • Online
+            </span>
+          </div>
+        </div>
+        <button class="chat-close-btn" onclick="toggleChatWindow()">&times;</button>
+      </div>
+      
+      <div class="chat-messages" id="chat-messages-box">
+        <div class="chat-msg chat-msg-bot">
+          Salam & welcome to Norumoto EV! I am Syazwani, your sales concierge. How can I assist you with our EV scooters or test ride arrangements today?
+        </div>
+      </div>
+      
+      <form class="chat-input-form" onsubmit="sendChatMessage(event)">
+        <input type="text" id="chat-user-input" class="chat-text-input" placeholder="Tulis mesej atau tekan mikrofon..." required autocomplete="off">
+        <button type="button" id="chat-mic-btn" class="chat-mic-btn" onclick="toggleVoiceInput()" title="Bercakap dengan Wani">🎤</button>
+        <button type="submit" class="chat-send-btn">➔</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Firebase Compatibility SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+  <script src="luyuan_features.js?v=3.5.2"></script>
+  <script src="website.js?v=3.5.2"></script>
+</body>
+</html>
