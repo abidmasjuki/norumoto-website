@@ -150,7 +150,7 @@
       <div class="section-head reveal">
         <span class="section-tag">Performance & Power</span>
         <h2 class="section-title">High-Performance Electric Powertrain</h2>
-        <p class="section-subtitle">Equipped with a 3,000 W liquid-cooled motor (5,200 W peak) and a high-capacity 72V 45Ah Lithium Ion battery system for up to 120 km range and 83 km/h top speed.</p>
+        <p class="section-subtitle">Equipped with a 3,000 W liquid-cooled motor (5,200 W peak) and a high-capacity 72V 45Ah Lithium Ion battery system for up to 120 km range and 89 km/h top speed.</p>
       </div>
 
       <div class="hud-battery-layout-grid reveal">
@@ -181,8 +181,8 @@
         <!-- Card 4: Velocity -->
         <div class="hud-spec-card">
           <span class="hud-spec-tag">Velocity</span>
-          <h3 class="hud-spec-title">83 km/h Top Speed</h3>
-          <div class="hud-spec-val">83<span class="hud-spec-unit"> km/h</span></div>
+          <h3 class="hud-spec-title">89 km/h Top Speed</h3>
+          <div class="hud-spec-val">89<span class="hud-spec-unit"> km/h</span></div>
           <p class="hud-spec-desc">High maximum speed to navigate highways easily, climbing angles up to 30°.</p>
         </div>
       </div>
@@ -748,14 +748,19 @@
         </div>
         
         <div class="reserve-form-panel reveal">
-          <!-- Embedded Test Ride Portal Iframe -->
+          <!-- Desktop: Embedded iframe (no scroll trap on large screens) -->
           <div class="test-ride-iframe-wrapper" style="width: 100%; height: 680px; border-radius: 16px; overflow: hidden; background: #0c0d12; border: 1px solid rgba(255, 255, 255, 0.08);">
-            <iframe src="https://norumoto-ev-test-ride.web.app/" style="width: 100%; height: 100%; border: none;" title="Norumoto Test Ride Booking"></iframe>
+            <iframe src="https://norumoto-ev-test-ride.web.app/" style="width: 100%; height: 100%; border: none;" title="Norumoto Test Ride Booking" loading="lazy"></iframe>
           </div>
-          <div style="text-align: center; margin-top: 1rem;">
-            <a href="https://norumoto-ev-test-ride.web.app/" target="_blank" style="color: var(--color-accent-blue); text-decoration: none; font-size: 0.85rem; font-weight: 500; display: inline-flex; align-items: center; gap: 0.25rem;">
-              Open Test Ride Portal in new tab ➔
-            </a>
+          <!-- Mobile: Full-width CTA button replaces iframe to avoid scroll trap -->
+          <div class="mobile-test-ride-cta" style="display: none; flex-direction: column; align-items: center; gap: 1rem; padding: 2rem; background: rgba(18,20,29,0.9); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px;">
+            <div style="text-align: center;">
+              <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">⚡</div>
+              <h4 style="color: #fff; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem;">Tempah Sesi Pandu Uji</h4>
+              <p style="color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.5;">Klik butang di bawah untuk membuka portal tempahan rasmi anda dalam tab baharu.</p>
+            </div>
+            <a href="https://norumoto-ev-test-ride.web.app/" target="_blank" rel="noopener" class="btn btn-primary" style="width: 100%; text-align: center; justify-content: center; padding: 1rem 2rem; font-size: 1rem; font-weight: 700;">Buka Portal Pandu Uji ➔</a>
+            <p style="color: var(--color-text-secondary); font-size: 0.75rem;">✓ Percuma &nbsp;|&nbsp; ✓ JPJ VTA Sah &nbsp;|&nbsp; ✓ Waiver Rasmi</p>
           </div>
           
           <div class="form-status" id="form-status-alert" style="display: none;"></div>
