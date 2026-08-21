@@ -37,7 +37,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [2.7.2] - 2026-07-27
 
 ### Changed
-- **HQ Address Update**: Updated official headquarters address from LOT 57108 to LOT 79979 in both footer markup and script dealer fallback arrays.
+- **HQ Address Update**: Updated official headquarters address from Lot 79979 to LOT 79979 in both footer markup and script dealer fallback arrays.
 - **Clickable Contacts & Address Links**: Modified the footer address blocks to link directly to Google Maps search URLs, and wrapped all phone numbers in native `tel:` dialer links. Configured links to inherit text color and omit underlining to maintain consistent design styling.
 - **Cache Busting Version Bump**: Updated references and query strings across files to `v2.7.2`.
 
