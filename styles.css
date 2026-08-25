@@ -1847,8 +1847,25 @@ spline-viewer {
   margin-bottom: 0.2rem;
 }
 .hero-pricing-overlay .price-new {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   font-weight: 800;
   color: #10b981;
   line-height: 1;
+}
+.pricing-wa-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: #25D366;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  align-self: flex-start;
+}
+.pricing-wa-link:hover {
+  background-color: #1ebe57;
 }
