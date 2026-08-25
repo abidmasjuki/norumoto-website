@@ -744,18 +744,16 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid var(--color-border);
-  background: radial-gradient(circle at center, rgba(30, 30, 35, 0.9) 0%, rgba(8, 8, 10, 1) 100%); /* Dark premium showroom gradient */
   border-radius: 12px;
-  padding: 3rem;
+  overflow: hidden;
   box-shadow: 0 25px 60px rgba(0,0,0,0.8);
 }
 
 .config-visual-img {
   width: 100%;
   height: auto;
-  max-height: 45vh;
-  object-fit: contain;
+  max-height: 65vh;
+  object-fit: cover;
   transition: var(--transition-medium);
 }
 
