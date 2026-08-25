@@ -87,10 +87,10 @@ window.addEventListener('scroll', () => {
 
 // 5. Configurator Interactive Options & Images Map
 const colorImages = {
-  red: 'red_scooter.webp',
-  blue: 'blue_scooter.webp',
-  grey: 'grey_scooter.webp',
-  black: 'black_scooter.webp'
+  red: 'assets/scooter-red.jpg',
+  blue: 'assets/scooter-blue.jpg',
+  grey: 'assets/scooter-grey.jpg',
+  black: 'assets/scooter-black.jpg'
 };
 
 let currentMode = 'eco';
