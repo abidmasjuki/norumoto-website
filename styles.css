@@ -1816,3 +1816,29 @@ spline-viewer {
   border-color: #10b981;
 }
 
+.hero-pricing-overlay {
+  display: inline-flex;
+  flex-direction: column;
+  background: rgba(15, 15, 17, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin-top: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-left: 4px solid #10b981;
+}
+.hero-pricing-overlay .price-old {
+  font-size: 1.1rem;
+  color: #94a3b8;
+  text-decoration: line-through;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+.hero-pricing-overlay .price-new {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #10b981;
+  line-height: 1;
+}
