@@ -1058,6 +1058,26 @@ if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
 // 10. Multi-Language Switcher (Malay & English)
 // ==========================================
 const translationMap = {
+  // Business Opportunities / CTA
+  "Business Opportunities": "Peluang Perniagaan",
+  "Be Part of Us": "Jadilah Sebahagian Dari Kami",
+  "Interested in generating income with Norumoto EV? Choose the business opportunity that suits you.": "Berminat menjana pendapatan bersama Norumoto EV? Pilih peluang perniagaan yang sesuai dengan anda.",
+  "POPULAR CHOICE": "PILIHAN POPULAR",
+  "Affiliate Program": "Program Affiliate",
+  "Ideal for those who want to start risk-free. Earn commissions for every successful sale.": "Sesuai untuk anda yang ingin bermula tanpa risiko. Jana komisen bagi setiap jualan yang berjaya.",
+  "Zero Capital": "Tanpa Modal",
+  "No stock holding required": "Tanpa perlu pegang stok",
+  "HQ handles technical, loan & JPJ": "HQ urus teknikal, loan & JPJ",
+  "Join Affiliate": "Sertai Affiliate",
+  "MORE EXCLUSIVE": "LEBIH EKSKLUSIF",
+  "Dealership Network": "Rangkaian Dealership",
+  "Become an authorized Norumoto dealer. Ideal if you are serious about building a long-term business with us.": "Jadi pengedar sah Norumoto. Sesuai jika anda serius membina perniagaan berpanjangan dengan kami.",
+  "Highest profit margins": "Margin keuntungan tertinggi",
+  "More benefits": "Lebih banyak kelebihan",
+  "& incentives": "& insentif",
+  "Official sales support from HQ": "Sokongan jualan rasmi dari HQ",
+  "Join Dealership": "Sertai Dealership",
+
   // Navigation & Headers
   "Home": "Utama",
   "Performance": "Prestasi",
