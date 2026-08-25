@@ -132,7 +132,6 @@ header.scrolled {
 .logo-link img {
   width: auto;
   object-fit: contain;
-  filter: brightness(0) invert(1) !important; /* Premium white look for emblem & text brand signature */
   opacity: 0.95;
   transition: opacity 0.3s ease;
 }
