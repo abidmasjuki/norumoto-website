@@ -753,7 +753,7 @@ section {
   width: 100%;
   height: auto;
   max-height: 65vh;
-  object-fit: cover;
+  object-fit: contain;
   transition: var(--transition-medium);
 }
 
@@ -1817,9 +1817,6 @@ spline-viewer {
 }
 
 .hero-pricing-overlay {
-  position: absolute;
-  top: 15%;
-  right: 5%;
   display: inline-flex;
   flex-direction: column;
   background: rgba(15, 15, 17, 0.25);
@@ -1830,14 +1827,6 @@ spline-viewer {
   padding: 1rem 1.5rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   border-left: 4px solid #10b981;
-  z-index: 20;
-}
-@media (max-width: 768px) {
-  .hero-pricing-overlay {
-    top: 5%;
-    right: 1.5rem;
-    padding: 0.75rem 1rem;
-  }
 }
 .hero-pricing-overlay .price-old {
   font-size: 1.1rem;
