@@ -1129,7 +1129,7 @@ const translationMap = {
   // Performance
   "Performance & Power": "Prestasi & Kuasa",
   "High-Performance Electric Powertrain": "Rangkaian Kuasa Elektrik Berprestasi Tinggi",
-  "Equipped with a 3,000 W liquid-cooled motor (5,200 W peak) and a high-capacity 72V 45Ah Lithium Ion battery system for up to 120 km range and 83 km/h top speed.": "Dilengkapi dengan motor sejukan cecair 3,000 W (puncak 5,200 W) dan sistem bateri Lithium Ion 72V 45Ah berkapasiti tinggi untuk jarak perjalanan sehingga 120 km dan kelajuan maksimum 83 km/h.",
+  "Equipped with a 3,000 W liquid-cooled motor (5,200 W peak) and a high-capacity 72V 45Ah Lithium Ion battery system for exceptional riding range and 89 km/h top speed.": "Dilengkapi dengan motor sejukan cecair 3,000 W (puncak 5,200 W) dan sistem bateri Lithium Ion 72V 45Ah berkapasiti tinggi untuk jarak perjalanan yang luar biasa dan kelajuan maksimum 89 km/h.",
   "Power System": "Sistem Kuasa",
   "72V 45Ah Lithium Ion": "Lithium Ion 72V 45Ah",
   "Uses high-density lithium-ion cells for smooth acceleration and exceptional mileage.": "Menggunakan sel lithium-ion berketumpatan tinggi untuk pecutan lancar dan perbatuan luar biasa.",
@@ -1137,10 +1137,11 @@ const translationMap = {
   "3,000W / 5,200W Peak": "Puncak 3,000W / 5,200W",
   "Nominal power of the liquid-cooled electric motor with responsive instant torque.": "Kuasa nominal motor elektrik sejukan cecair dengan tork serta-merta yang responsif.",
   "Riding Range": "Jarak Perjalanan",
-  "Up to 120 km Range": "Jarak Perjalanan Sehingga 120 km",
-  "Maximum riding range per full charge when operating in energy-efficient Speed Mode 1.": "Jarak perjalanan maksimum bagi setiap pengecasan penuh apabila beroperasi dalam Mod Kelajuan 1 yang menjimatkan tenaga.",
+  "Dynamic Range": "Julat Dinamik",
+  " Modes": " Mod",
+  "Maximum riding distance is influenced by payload, road conditions, and riding speed (Mode 1 - 3).": "Jarak tunggangan maksimum dipengaruhi oleh beban, keadaan jalan dan kelajuan (Mod 1 - 3).",
   "Velocity": "Kelajuan",
-  "83 km/h Top Speed": "Kelajuan Maksimum 83 km/h",
+  "89 km/h Top Speed": "Kelajuan Maksimum 89 km/h",
   "High maximum speed to navigate highways easily, climbing angles up to 30°.": "Kelajuan maksimum tinggi untuk menavigasi lebuh raya dengan mudah, dengan sudut pendakian sehingga 30°.",
 
   // Design / Chassis
