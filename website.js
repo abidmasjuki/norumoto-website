@@ -1114,9 +1114,9 @@ const translationMap = {
   "Solid State Headlight": "Lampu Hadapan Solid State",
   "Solid State Charger": "Pengecas Solid State",
   "Solid State Controller": "Pengawal Solid State",
-  "Graphene Steel Wire Tyre": "Tayar Kawat Keluli Graphene",
+  "Steel Wire Tyre": "Tayar Kawat Keluli",
   "Liquid-cooled Motor 2.0": "Motor Sejukan Cecair 2.0",
-  "High-energy Graphene Battery / Super Lithium Battery": "Bateri Graphene Tenaga Tinggi / Bateri Super Lithium",
+  "Super Lithium Battery": "Bateri Super Lithium",
   "A premium 3000W liquid-cooled electric motor (5200W Peak Power). Reduces operating temperatures by up to 30°C to sustain peak performance.": "Motor elektrik sejukan cecair 3000W premium (Kuasa Puncak 5200W). Menurunkan suhu operasi motor sehingga 30°C bagi mengekalkan prestasi puncak sepanjang hari.",
 
   "World-class premium electric mobility engineering. Proudly Malaysian.": "Seni kejuruteraan mobiliti elektrik premium bertaraf dunia. Bangga buatan Malaysia.",

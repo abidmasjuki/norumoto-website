@@ -39,17 +39,17 @@ document.addEventListener("DOMContentLoaded", () => {
       desc: { ms: "Pengawal pintar gred automotif yang mengoptimumkan aliran elektrik to motor, mengurangkan haba operasi sebanyak 25% untuk jangka hayat lebih lama.", en: "An automotive-grade smart controller that optimizes electric flow to the motor, reducing operating temperatures by 25% for a longer lifespan." }
     },
     tire: {
-      title: { ms: "Tayar Kawat Keluli Graphene", en: "Graphene Steel Wire Tyre" },
+      title: { ms: "Tayar Kawat Keluli", en: "Steel Wire Tyre" },
       img: "assets/luyuan/graphene_steel_wire_tire.png",
       desc: { ms: "Tayar tanpa tiub 12-inci premium (90/90-12 hadapan, 100/80-12 belakang) yang memberikan ketahanan pancutan cemerlang dan cengkaman jalan basah yang luar biasa.", en: "Premium 12-inch tubeless tyres (90/90-12 front, 100/80-12 rear) delivering excellent puncture resistance and exceptional wet-road grip." }
     },
     motor: {
       title: { ms: "Motor Sejukan Cecair 2.0", en: "Liquid-cooled Motor 2.0" },
       img: "assets/luyuan/liquid_cooled_motor.png",
-      desc: { ms: "Motor elektrik sejukan cecair 3,000 W premium (Kuasa Puncak 5,200 W) yang menurunkan suhu operasi motor sebanyak 30°C bagi mengekalkan prestasi puncak.", en: "A premium 3,000W liquid-cooled electric motor (5,200W Peak Power) that reduces operating temperatures by up to 30°C to sustain peak performance." }
+      desc: { ms: "Motor elektrik sejukan cecair 3000W premium (Kuasa Puncak 5200W). Menurunkan suhu operasi motor sehingga 30°C bagi mengekalkan prestasi puncak sepanjang hari.", en: "A premium 3000W liquid-cooled electric motor (5200W Peak Power). Reduces operating temperatures by up to 30°C to sustain peak performance." }
     },
     battery: {
-      title: { ms: "Bateri Graphene Tenaga Tinggi / Bateri Super Lithium", en: "High-energy Graphene Battery / Super Lithium Battery" },
+      title: { ms: "Bateri Super Lithium", en: "Super Lithium Battery" },
       img: "assets/luyuan/battery_graphene_pack.png",
       desc: { ms: "Sistem pek bateri modular Lithium Ion 72V 45Ah berkapasiti tinggi dengan pengurusan haba sel yang stabil dan BMS pintar bersepadu.", en: "A high-capacity 72V 45Ah Lithium Ion battery pack system outfitted with stable cell thermal management and an integrated smart BMS." }
     }
